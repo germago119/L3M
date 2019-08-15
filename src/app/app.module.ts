@@ -9,7 +9,7 @@ import { VPuntoVentaComponent } from './v-punto-venta/v-punto-venta.component';
 import { GTrabajadoresComponent } from './g-trabajadores/g-trabajadores.component';
 import { GComprasComponent } from './g-compras/g-compras.component';
 import { AHorasComponent } from './a-horas/a-horas.component';
-import {AlertModule} from 'ngx-bootstrap';
+import {AlertModule, BsDatepickerModule, ButtonsModule, ModalModule, PaginationModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,11 @@ import {AlertModule} from 'ngx-bootstrap';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    ModalModule.forRoot(),
+    ButtonsModule.forRoot(),
+    PaginationModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
