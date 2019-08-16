@@ -10,6 +10,10 @@ import { GTrabajadoresComponent } from './g-trabajadores/g-trabajadores.componen
 import { GComprasComponent } from './g-compras/g-compras.component';
 import { AHorasComponent } from './a-horas/a-horas.component';
 import {AlertModule, BsDatepickerModule, ButtonsModule, ModalModule, PaginationModule} from 'ngx-bootstrap';
+import { GRolesComponent } from './g-roles/g-roles.component';
+import { GSucursalesComponent } from './g-sucursales/g-sucursales.component';
+import { GProveedoresComponent } from './g-proveedores/g-proveedores.component';
+import { ProductosComponent } from './productos/productos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import {AlertModule, BsDatepickerModule, ButtonsModule, ModalModule, PaginationM
     VPuntoVentaComponent,
     GTrabajadoresComponent,
     GComprasComponent,
-    AHorasComponent
+    AHorasComponent,
+    GRolesComponent,
+    GSucursalesComponent,
+    GProveedoresComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,45 @@
-<p>v-admin works!</p>
+<div class="sidebar">
+    <h2>Menú</h2>
+    <ul id="list">
+        <li id= "1" (click)="activarRoles()">Gestión de roles</li>
+        <li id= "2" (click)="activarSucursales()">Gestión de suscursales</li>
+        <li id= "3" (click)="activarTrabajadores()">Gestión de trabajadores</li>
+        <li id= "4" (click)="activarProveedores()">Gestión de proveedores</li>
+        <li id= "5" (click)="activarProductos()">Gestión de productos</li>
+        <li id= "6" (click)="activarCompras()">Gestión de compras</li>
+        <li id= "7" (click)="activarHoras()">Asignación de horas </li>
+        <li id= "8" (click)="activarPlanilla()">Generación de planilla</li>
+    </ul>
+</div>
+
+<div *ngIf = "sucursales">
+    <app-g-sucursales></app-g-sucursales>
+    {{desactivarSucursales()}}
+</div>
+
+<div *ngIf = "roles">
+    <app-g-roles></app-g-roles>
+    {{desactivarRoles()}}
+</div>
+
+<div *ngIf = "trabajadores">
+    <app-g-trabajadores></app-g-trabajadores>
+    {{desactivarTrabajadores()}}
+</div>
+
+<div *ngIf = "proveedores">
+    <app-g-proveedores></app-g-proveedores>
+    {{desactivarProveedores()}}
+</div>
+
+<div *ngIf = "productos">
+    <app-productos></app-productos>
+    {{desactivarProductos()}}
+</div>
+
+<div *ngIf = "compras">
+    <app-g-compras></app-g-compras>
+    {{desactivarCompras()}}
+</div>
+
+
