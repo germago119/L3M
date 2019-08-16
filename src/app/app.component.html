@@ -1,23 +1,42 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">L3M</a>
+  <a class="navbar-brand" routerLink="">L3M</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Administración</a>
+      <li class="nav-item dropdown">
+        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+           id="navbarDropdown" role="button">
+          Administración
+        </a>
+        <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+          <a class="dropdown-item" routerLink="admin/roles">Gestion de Roles</a>
+          <a class="dropdown-item" routerLink="admin/sucursales">Gestion de Sucursales</a>
+          <a class="dropdown-item" routerLink="admin/trabajadores">Gestion de Trabajadores</a>
+          <a class="dropdown-item" routerLink="admin/proveedores">Gestion de Proveedores</a>
+          <a class="dropdown-item" routerLink="admin/productos">Gestion de Productos</a>
+          <a class="dropdown-item" routerLink="admin/compras">Gestion de Compras</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="admin/horas">Asignacion de Horas</a>
+          <a class="dropdown-item" routerLink="admin/planilla">Generacion de Planilla</a>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Reportes</a>
+        <a class="nav-link" routerLink="/admin">Administración</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Punto de Venta</a>
+        <a class="nav-link" routerLink="/report">Reportes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pventa">Punto de Venta</a>
       </li>
     </ul>
   </div>
 </nav>
 
-<app-v-admin></app-v-admin>
+
+<router-outlet></router-outlet>
+<!--<app-v-admin></app-v-admin>-->
 

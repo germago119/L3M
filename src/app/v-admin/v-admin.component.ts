@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-v-admin',
@@ -7,62 +7,81 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VAdminComponent implements OnInit {
 
-  roles:boolean = false;
-  sucursales: boolean = false;
-  trabajadores:boolean = false;
-  proveedores:boolean = false;
-  productos:boolean = false;
-  compras:boolean = false;
+  roles = false;
+  sucursales = false;
+  trabajadores = false;
+  proveedores = false;
+  productos = false;
+  compras = false;
+  horas = false;
+  planilla = false;
 
-  activarSucursales(){
+  constructor() {
+  }
+
+  activarHoras() {
+    this.horas = true;
+  }
+
+  desactivarHoras() {
+    this.horas = false;
+  }
+
+  activarPlanilla() {
+    this.planilla = true;
+  }
+
+  desactivarPlanilla() {
+    this.planilla = false;
+  }
+
+  activarSucursales() {
     this.sucursales = true;
   }
 
-  desactivarSucursales(){
+  desactivarSucursales() {
     this.sucursales = false;
   }
 
-  activarRoles(){
+  activarRoles() {
     this.roles = true;
   }
 
-  desactivarRoles(){
+  desactivarRoles() {
     this.roles = false;
   }
 
-  activarTrabajadores(){
+  activarTrabajadores() {
     this.trabajadores = true;
   }
 
-  desactivarTrabajadores(){
+  desactivarTrabajadores() {
     this.trabajadores = false;
   }
 
-  activarProveedores(){
+  activarProveedores() {
     this.proveedores = true;
   }
 
-  desactivarProveedores(){
+  desactivarProveedores() {
     this.proveedores = false;
   }
 
-  activarProductos(){
+  activarProductos() {
     this.productos = true;
   }
 
-  desactivarProductos(){
+  desactivarProductos() {
     this.productos = false;
   }
 
-  activarCompras(){
+  activarCompras() {
     this.compras = true;
   }
 
-  desactivarCompras(){
-    this.compras= false;
+  desactivarCompras() {
+    this.compras = false;
   }
-
-  constructor() { }
 
   ngOnInit() {
   }

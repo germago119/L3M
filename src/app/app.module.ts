@@ -14,6 +14,10 @@ import { GRolesComponent } from './g-roles/g-roles.component';
 import { GSucursalesComponent } from './g-sucursales/g-sucursales.component';
 import { GProveedoresComponent } from './g-proveedores/g-proveedores.component';
 import { ProductosComponent } from './productos/productos.component';
+import {GPlanillaComponent} from './g-planilla/g-planilla.component';
+import {AppRoutingModule} from './app-routing/app-routing.module';
+import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
+import {VHomeComponent} from './v-home/v-home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { ProductosComponent } from './productos/productos.component';
     GRolesComponent,
     GSucursalesComponent,
     GProveedoresComponent,
-    ProductosComponent
+    ProductosComponent,
+    GPlanillaComponent,
+    PagenotfoundComponent,
+    VHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,8 @@ import { ProductosComponent } from './productos/productos.component';
     BsDatepickerModule.forRoot(),
     ModalModule.forRoot(),
     ButtonsModule.forRoot(),
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
