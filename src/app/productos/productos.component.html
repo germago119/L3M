@@ -1,26 +1,48 @@
-<div id="Titulo">
-        <h1>Gestión de productos</h1>
-</div>
-    
-    
-<div >
-    <table class = "table table-responsive-col table-striped table-hover table-bordered">
-        <thead class = "table-dark">
+<div class="card-body">
+        <div id="table" class="table-editable">
+          <table class="table table-bordered table-responsive-md table-striped text-center">
+          <thead class = "table-dark">
             <tr>
-                <th>Nombre</th><th>Descripción</th><th>Código de Barras</th><th>Proveedor</th><th>Precio de compra</th><th>Impuesto</th><th>Descuento</th>
+              <th class="text-center">Nombre</th>
+              <th class="text-center">Descripción</th>
+              <th class="text-center">Código de Barras</th>
+              <th class="text-center">Proveedor</th>
+              <th class="text-center">Precio de Compra</th>
+              <th class="text-center">Impuesto</th>
+              <th class="text-center">Descuento</th>
+              <th class="text-center">Eliminar</th>
             </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        </tbody>
-    </table>
+            </thead>
+            <tr *ngFor="let producto of productosList; let id = index">
+              <td>
+                <span (keyup)="changeValue(id, 'nombre', $event)" (blur)="updateList(id, 'nombre', $event)" contenteditable="true">{{producto.nombre}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'descripcion', $event)" (blur)="updateList(id, 'descripcion', $event)" contenteditable="true">{{producto.descripcion}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'codigoBarras', $event)" (blur)="updateList(id, 'codigoBarras', $event)" contenteditable="true">{{producto.codigoBarras}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'proveedor', $event)" (blur)="updateList(id, 'proveedor', $event)" contenteditable="true">{{producto.proveedor}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'precio', $event)" (blur)="updateList(id, 'precio', $event)" contenteditable="true">{{producto.precio}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'impuesto', $event)" (blur)="updateList(id, 'impuesto', $event)" contenteditable="true">{{producto.impuesto}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'descuento', $event)" (blur)="updateList(id, 'descuento', $event)" contenteditable="true">{{producto.descuento}}</span>
+              </td>
+             
+              <td>
+                <span class="table-remove">
+                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Eliminar</button>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
 </div>
 

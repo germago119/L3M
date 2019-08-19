@@ -1,26 +1,43 @@
-<div id="Titulo">
-        <h1>Gestión de Compras</h1>
-</div>
-    
-    
-<div >
-    <table class = "table table-responsive-col table-striped table-hover table-bordered">
-        <thead class = "table-dark">
+<div class="card-body">
+        <div id="table" class="table-editable">
+          <table class="table table-bordered table-responsive-md table-striped text-center">
+          <thead class = "table-dark">
             <tr>
-                <th>Descripción</th><th>Fecha real de la compra</th><th>Fecha de registro de compra</th><th>Proveedor</th><th>Foto de la compra</th><th>Sucursal</th>
+              <th class="text-center">Descripción</th>
+              <th class="text-center">Fecha real de la compra</th>
+              <th class="text-center">Fecha de registro de la compra</th>
+              <th class="text-center">Proveedor</th>
+              <th class="text-center">Foto de la Compra</th>
+              <th class="text-center">Sucursal</th>
+              <th class="text-center">Eliminar</th>
             </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        </tbody>
-    </table>
+            </thead>
+            <tr *ngFor="let compra of comprasList; let id = index">
+              <td>
+                <span (keyup)="changeValue(id, 'descripcion', $event)" (blur)="updateList(id, 'descripcion', $event)" contenteditable="true">{{compra.descripcion}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'fechaRealCompra', $event)" (blur)="updateList(id, 'fechaRealCompra', $event)" contenteditable="true">{{compra.fechaRealCompra}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'fechaRegistroCompra', $event)" (blur)="updateList(id, 'fechaRegistroCompra', $event)" contenteditable="true">{{compra.fechaRegistroCompra}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'proveedor', $event)" (blur)="updateList(id, 'proveedor', $event)" contenteditable="true">{{compra.proveedor}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'fotoCompra', $event)" (blur)="updateList(id, 'fotoCompra', $event)" contenteditable="true">{{compra.fotoCompra}}</span>
+              </td>
+              <td>
+                    <span (keyup)="changeValue(id, 'sucursal', $event)" (blur)="updateList(id, 'sucursal', $event)" contenteditable="true">{{compra.sucursal}}</span>
+              </td>
+        
+              <td>
+                <span class="table-remove">
+                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Eliminar</button>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
 </div>
-

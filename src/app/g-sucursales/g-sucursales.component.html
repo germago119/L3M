@@ -1,28 +1,34 @@
-<div id="Titulo">
-        <h1>Gestión de sucursales</h1>
-</div>
-    
-    
-<div>
-    <table class = "table table-responsive-col table-striped table-hover table-bordered">
-        <thead class ="table-dark">
-            <tr>
-                <th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Administrador</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        </tbody>
-    </table>
+<div class="card-body">
+          <div id="table" class="table-editable">
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+            <thead class = "table-dark">
+              <tr>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Dirección</th>
+                <th class="text-center">Teléfono</th>
+                <th class="text-center">Administrador</th>
+                <th class="text-center">Eliminar</th>
+              </tr>
+              </thead>
+              <tr *ngFor="let sucursal of sucursalList; let id = index">
+                <td>
+                  <span (keyup)="changeValue(id, 'nombre', $event)" (blur)="updateList(id, 'nombre', $event)" contenteditable="true">{{sucursal.nombre}}</span>
+                </td>
+                <td>
+                  <span contenteditable="true" (keyup)="changeValue(id, 'direccion', $event)" (blur)="updateList(id, 'direccion', $event)">{{sucursal.direccion}}</span>
+                </td>
+                <td>
+                  <span contenteditable="true" (keyup)="changeValue(id, 'telefono', $event)" (blur)="updateList(id, 'telefono', $event)">{{sucursal.telefono}}</span>
+                </td>
+                <td>
+                  <span contenteditable="true" (keyup)="changeValue(id, 'administrador', $event)" (blur)="updateList(id, 'administrador', $event)">{{sucursal.administrador}}</span>
+                </td>
+                <td>
+                  <span class="table-remove">
+                    <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Eliminar</button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
 </div>

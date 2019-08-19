@@ -1,28 +1,26 @@
-<div id="Titulo">
-        <h1>Gestión de proveedores</h1>
-</div>
-    
-    
-<div>
-    <table class = "table table-responsive-col table-striped table-hover table-bordered" >
-        <thead class = "table-dark">
+<div class="card-body">
+        <div id="table" class="table-editable">
+          <table class="table table-bordered table-responsive-md table-striped text-center">
+          <thead class = "table-dark">
             <tr>
-                <th>Nombre Completo</th><th>Cédula (Física o Jurídica)</th>
+              <th class="text-center">Nombre Completo</th>
+              <th class="text-center">Cédula (Física o Jurídica)</th>
+              <th class="text-center">Eliminar</th>
             </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        </tbody>
-    </table>
+            </thead>
+            <tr *ngFor="let proveedor of proveedoresList; let id = index">
+              <td>
+                <span (keyup)="changeValue(id, 'nombreCompleto', $event)" (blur)="updateList(id, 'nombreCompleto', $event)" contenteditable="true">{{proveedor.nombreCompleto}}</span>
+              </td>
+              <td>
+                <span contenteditable="true" (keyup)="changeValue(id, 'cedula', $event)" (blur)="updateList(id, 'cedula', $event)">{{proveedor.cedula}}</span>
+              </td>
+              <td>
+                <span class="table-remove">
+                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Eliminar</button>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
 </div>

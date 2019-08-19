@@ -1,25 +1,42 @@
-<div id="Titulo">
-        <h1>Gestión de trabajadores</h1>
-</div>
-    
-    
-<div>
-    <table class = "table table-responsive-col table-striped table-hover table-bordered">
-        <thead class = "table-dark">
+<div class="card-body">
+        <div id="table" class="table-editable">
+          <table class="table table-bordered table-responsive-md table-striped text-center">
+          <thead class = "table-dark">
             <tr>
-                <th>Cédula</th><th>Nombre Completo</th><th>Fecha de nacimiento</th><th>Fecha de ingreso al supermercado</th><th>Sucursal</th><th>Salario por hora</th>
+              <th class="text-center">Cédula</th>
+              <th class="text-center">Nombre Completo</th>
+              <th class="text-center">Fecha de Nacimiento</th>
+              <th class="text-center">Fecha de Ingreso Laboral</th>
+              <th class="text-center">Sucursal</th>
+              <th class="text-center">Salario por Hora</th>
+              <th class="text-center">Eliminar</th>
             </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        <tr>
-            <td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td><td>Prueba 1</td>
-        </tr>
-        </tbody>
-    </table>
+            </thead>
+            <tr *ngFor="let trabajador of trabajadoresList; let id = index">
+              <td>
+                <span (keyup)="changeValue(id, 'cedula', $event)" (blur)="updateList(id, 'cedula', $event)" contenteditable="true">{{trabajador.cedula}}</span>
+              </td>
+              <td>
+                <span (keyup)="changeValue(id, 'nombreCompleto', $event)" (blur)="updateList(id, 'nombreCompleto', $event)" contenteditable="true">{{trabajador.nombreCompleto}}</span>
+              </td>
+              <td>
+                <span (keyup)="changeValue(id, 'fechaNacimiento', $event)" (blur)="updateList(id, 'fechaNacimiento', $event)" contenteditable="true">{{trabajador.fechaNacimiento}}</span>
+              </td>
+              <td>
+                <span (keyup)="changeValue(id, 'fechaIngreso', $event)" (blur)="updateList(id, 'fechaIngreso', $event)" contenteditable="true">{{trabajador.fechaIngreso}}</span>
+              </td>
+              <td>
+                <span (keyup)="changeValue(id, 'sucursal', $event)" (blur)="updateList(id, 'sucursal', $event)" contenteditable="true">{{trabajador.sucursal}}</span>
+              </td>
+              <td>
+                <span (keyup)="changeValue(id, 'salarioPorHora', $event)" (blur)="updateList(id, 'salarioPorHora', $event)" contenteditable="true">{{trabajador.salarioPorHora}}</span>
+              </td>
+              <td>
+                <span class="table-remove">
+                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Eliminar</button>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
 </div>
