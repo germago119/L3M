@@ -1,34 +1,3 @@
-#main-container{
-    margin: 100px 300px;
-    width: 600px;
-}
-
-#Titulo{
-    margin: 20px 300px;
-}
-
-
-table{
-    background-color: white;
-    text-align: left;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th,td{
-    padding: 20px;
-}
-
-thead{
-    background-color: #2d3436;
-    border-bottom: solid 5px;
-    color: white;
-}
-
-tr:nth-child(even){
-    background-color: #ddd;
-}
-
 tr:hover td{
     background-color: #2d3436;
     color:white;
