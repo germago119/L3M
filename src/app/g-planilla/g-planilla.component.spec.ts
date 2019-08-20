@@ -9,8 +9,7 @@ describe('GPlanillaComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [GPlanillaComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

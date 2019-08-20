@@ -6,11 +6,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./v-home.component.css']
 })
 export class VHomeComponent implements OnInit {
-
   constructor() {
   }
 
   ngOnInit() {
   }
-
 }

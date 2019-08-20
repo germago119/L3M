@@ -9,8 +9,7 @@ describe('VAdminComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [VAdminComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

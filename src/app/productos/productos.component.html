@@ -1,136 +1,257 @@
 <div class="container-fluid">
-
   <div class="jumbotron">
     <h1 class="display-4">Gestion de Trabajadores</h1>
-    <p class="lead">El sistema debe permitir ingresar, modificar y eliminar trabajadores, de los cuales se guarda
-      cedula, nombre completo, fecha de nacimiento, fecha de ingreso al supermercado, sucursal donde labora y el salario
-      por hora del empleado.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <button aria-controls="collapseForm" aria-expanded="false" class="btn btn-outline-success btn-lg"
-            data-target="#collapseForm" data-toggle="collapse" role="button" type="button">AGREGAR
+    <p class="lead">
+      El sistema debe permitir ingresar, modificar y eliminar trabajadores, de
+      los cuales se guarda cedula, nombre completo, fecha de nacimiento, fecha
+      de ingreso al supermercado, sucursal donde labora y el salario por hora
+      del empleado.
+    </p>
+    <hr class="my-4"/>
+    <p>
+      It uses utility classes for typography and spacing to space content out
+      within the larger container.
+    </p>
+    <button
+      aria-controls="collapseForm"
+      aria-expanded="false"
+      class="btn btn-outline-success btn-lg"
+      data-target="#collapseForm"
+      data-toggle="collapse"
+      role="button"
+      type="button"
+    >
+      AGREGAR
     </button>
   </div>
 
   <div class="collapse" id="collapseForm">
-    <form #userForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted" novalidate>
-
+    <form
+        #userForm="ngForm"
+        (ngSubmit)="onSubmit()"
+        *ngIf="!submitted"
+        novalidate
+    >
       <div class="row">
         <div class="col-lg-6 form-group">
           <label>Nombre</label>
-          <input #name="ngModel" [(ngModel)]="trabajadorModel.nombre" [class.is-invalid]="name.invalid && name.touched"
-                 class="form-control" name="name" required type="text">
-          <small [class.d-none]="name.valid || name.untouched" class="text-danger">Nombre es necesario</small>
+          <input
+              #name="ngModel"
+              [(ngModel)]="trabajadorModel.nombre"
+              [class.is-invalid]="name.invalid && name.touched"
+              class="form-control"
+              name="name"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="name.valid || name.untouched"
+            class="text-danger"
+          >Nombre es necesario</small
+          >
         </div>
 
         <div class="col-lg-3 form-group">
           <label>Nacimiento</label>
-          <input #nacimiento="ngModel" [(ngModel)]="trabajadorModel.nacimiento"
-                 [class.is-invalid]="nacimiento.invalid && nacimiento.touched"
-                 bsDatepicker class="form-control" name="nacimiento" placement="top" [bsConfig]="{isAnimated: true, adaptivePosition: true}"
-                 required type="text">
-          <small [class.d-none]="nacimiento.valid || nacimiento.untouched" class="text-danger">Nacimiento
-            requerida</small>
+          <input
+              #nacimiento="ngModel"
+              [(ngModel)]="trabajadorModel.nacimiento"
+              [bsConfig]="{ isAnimated: true, adaptivePosition: true }"
+              [class.is-invalid]="nacimiento.invalid && nacimiento.touched"
+              bsDatepicker
+              class="form-control"
+              name="nacimiento"
+              placement="top"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="nacimiento.valid || nacimiento.untouched"
+            class="text-danger"
+          >Nacimiento requerida</small
+          >
         </div>
 
         <div class="col-lg-3 form-group">
           <label>Ingreso</label>
-          <input #ingreso="ngModel" [(ngModel)]="trabajadorModel.ingreso"
-                 [class.is-invalid]="ingreso.invalid && ingreso.touched" bsDatepicker
-                 class="form-control" name="ingreso" placement="top" [bsConfig]="{isAnimated: true, adaptivePosition: true}"
-                 required type="text">
-          <small [class.d-none]="ingreso.valid || ingreso.untouched" class="text-danger">Ingreso requerido</small>
+          <input
+              #ingreso="ngModel"
+              [(ngModel)]="trabajadorModel.ingreso"
+              [bsConfig]="{ isAnimated: true, adaptivePosition: true }"
+              [class.is-invalid]="ingreso.invalid && ingreso.touched"
+              bsDatepicker
+              class="form-control"
+              name="ingreso"
+              placement="top"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="ingreso.valid || ingreso.untouched"
+            class="text-danger"
+          >Ingreso requerido</small
+          >
         </div>
-
       </div>
 
-            <div class="row">
-              <div class="col-lg-3 form-group">
-                <label>Cedula</label>
-                <input #cedula="ngModel" [(ngModel)]="trabajadorModel.cedula" [class.is-invalid]="cedula.invalid && cedula.touched"
-                       class="form-control" name="cedula" required type="number">
-                <small [class.d-none]="cedula.valid || cedula.untouched" class="text-danger">Cedula es necesario</small>
-              </div>
+      <div class="row">
+        <div class="col-lg-3 form-group">
+          <label>Cedula</label>
+          <input
+              #cedula="ngModel"
+              [(ngModel)]="trabajadorModel.cedula"
+              [class.is-invalid]="cedula.invalid && cedula.touched"
+              class="form-control"
+              name="cedula"
+              required
+              type="number"
+          />
+          <small
+            [class.d-none]="cedula.valid || cedula.untouched"
+            class="text-danger"
+          >Cedula es necesario</small
+          >
+        </div>
 
-              <div class="col-lg-3 form-group">
-                <label>Salario por Hora</label>
-                <input #salario="ngModel" [(ngModel)]="trabajadorModel.salario" [class.is-invalid]="salario.invalid && salario.touched"
-                       class="form-control" name="salario" required type="number">
-                <small [class.d-none]="salario.valid || salario.untouched" class="text-danger">Salario por hora es necesario</small>
-              </div>
+        <div class="col-lg-3 form-group">
+          <label>Salario por Hora</label>
+          <input
+              #salario="ngModel"
+              [(ngModel)]="trabajadorModel.salario"
+              [class.is-invalid]="salario.invalid && salario.touched"
+              class="form-control"
+              name="salario"
+              required
+              type="number"
+          />
+          <small
+            [class.d-none]="salario.valid || salario.untouched"
+            class="text-danger"
+          >Salario por hora es necesario</small
+          >
+        </div>
 
-              <div class="col-lg-3 form-group">
-                <label>Sucursal</label>
-                <input #sucursal="ngModel" [(ngModel)]="trabajadorModel.sucursal"
-                       [class.is-invalid]="sucursal.invalid && sucursal.touched" class="form-control" name="sucursal"
-                       required type="text">
-                <small [class.d-none]="sucursal.valid || sucursal.untouched" class="text-danger">Sucursal requerido</small>
-              </div>
+        <div class="col-lg-3 form-group">
+          <label>Sucursal</label>
+          <input
+              #sucursal="ngModel"
+              [(ngModel)]="trabajadorModel.sucursal"
+              [class.is-invalid]="sucursal.invalid && sucursal.touched"
+              class="form-control"
+              name="sucursal"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="sucursal.valid || sucursal.untouched"
+            class="text-danger"
+          >Sucursal requerido</small
+          >
+        </div>
+      </div>
 
-            </div>
-
-      <button [disabled]="userForm.form.invalid" class="btn btn-outline-primary " type="submit">Agregar
-        Sucursal
+      <button
+        [disabled]="userForm.form.invalid"
+        class="btn btn-outline-primary "
+        type="submit"
+      >
+        Agregar Sucursal
       </button>
-
     </form>
-
   </div>
 
-<div class="card-body">
-  <div class="table-editable" id="table">
-    <table class="table table-bordered table-responsive-md table-striped text-center">
-      <thead class="table-dark">
-      <tr>
-        <th class="text-center">Nombre</th>
-        <th class="text-center">Descripción</th>
-        <th class="text-center">Código de Barras</th>
-        <th class="text-center">Proveedor</th>
-        <th class="text-center">Precio de Compra</th>
-        <th class="text-center">Impuesto</th>
-        <th class="text-center">Descuento</th>
-        <th class="text-center">Eliminar</th>
-      </tr>
-      </thead>
-      <tr *ngFor="let producto of productosList; let id = index">
-        <td>
-          <span (blur)="updateList(id, 'nombre', $event)" (keyup)="changeValue(id, 'nombre', $event)"
-                contenteditable="true">{{producto.nombre}}</span>
-        </td>
-        <td>
-          <span (blur)="updateList(id, 'descripcion', $event)" (keyup)="changeValue(id, 'descripcion', $event)"
-                contenteditable="true">{{producto.descripcion}}</span>
-        </td>
-        <td>
-          <span (blur)="updateList(id, 'codigoBarras', $event)" (keyup)="changeValue(id, 'codigoBarras', $event)"
-                contenteditable="true">{{producto.codigoBarras}}</span>
-        </td>
-        <td>
-          <span (blur)="updateList(id, 'proveedor', $event)" (keyup)="changeValue(id, 'proveedor', $event)"
-                contenteditable="true">{{producto.proveedor}}</span>
-        </td>
-        <td>
-          <span (blur)="updateList(id, 'precio', $event)" (keyup)="changeValue(id, 'precio', $event)"
-                contenteditable="true">{{producto.precio}}</span>
-        </td>
-        <td>
-          <span (blur)="updateList(id, 'impuesto', $event)" (keyup)="changeValue(id, 'impuesto', $event)"
-                contenteditable="true">{{producto.impuesto}}</span>
-        </td>
-        <td>
-          <span (blur)="updateList(id, 'descuento', $event)" (keyup)="changeValue(id, 'descuento', $event)"
-                contenteditable="true">{{producto.descuento}}</span>
-        </td>
+  <div class="card-body">
+    <div class="table-editable" id="table">
+      <table
+        class="table table-bordered table-responsive-md table-striped text-center"
+      >
+        <thead class="table-dark">
+        <tr>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Descripción</th>
+          <th class="text-center">Código de Barras</th>
+          <th class="text-center">Proveedor</th>
+          <th class="text-center">Precio de Compra</th>
+          <th class="text-center">Impuesto</th>
+          <th class="text-center">Descuento</th>
+          <th class="text-center">Eliminar</th>
+        </tr>
+        </thead>
+        <tr *ngFor="let producto of productosList; let id = index">
+          <td>
+            <span
+              (blur)="updateList(id, 'nombre', $event)"
+              (keyup)="changeValue(id, 'nombre', $event)"
+              contenteditable="true"
+            >{{ producto.nombre }}</span
+            >
+          </td>
+          <td>
+            <span
+              (blur)="updateList(id, 'descripcion', $event)"
+              (keyup)="changeValue(id, 'descripcion', $event)"
+              contenteditable="true"
+            >{{ producto.descripcion }}</span
+            >
+          </td>
+          <td>
+            <span
+              (blur)="updateList(id, 'codigoBarras', $event)"
+              (keyup)="changeValue(id, 'codigoBarras', $event)"
+              contenteditable="true"
+            >{{ producto.codigoBarras }}</span
+            >
+          </td>
+          <td>
+            <span
+              (blur)="updateList(id, 'proveedor', $event)"
+              (keyup)="changeValue(id, 'proveedor', $event)"
+              contenteditable="true"
+            >{{ producto.proveedor }}</span
+            >
+          </td>
+          <td>
+            <span
+              (blur)="updateList(id, 'precio', $event)"
+              (keyup)="changeValue(id, 'precio', $event)"
+              contenteditable="true"
+            >{{ producto.precio }}</span
+            >
+          </td>
+          <td>
+            <span
+              (blur)="updateList(id, 'impuesto', $event)"
+              (keyup)="changeValue(id, 'impuesto', $event)"
+              contenteditable="true"
+            >{{ producto.impuesto }}</span
+            >
+          </td>
+          <td>
+            <span
+              (blur)="updateList(id, 'descuento', $event)"
+              (keyup)="changeValue(id, 'descuento', $event)"
+              contenteditable="true"
+            >{{ producto.descuento }}</span
+            >
+          </td>
 
-        <td>
-                <span class="table-remove">
-                  <button (click)="remove(id)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
-                          type="button">Eliminar</button>
-                </span>
-        </td>
-      </tr>
-    </table>
+          <td>
+            <span class="table-remove">
+              <button
+                (click)="remove(id)"
+                class="my-0"
+                color="danger"
+                mdbBtn
+                rounded="true"
+                size="sm"
+                type="button"
+              >
+                Eliminar
+              </button>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
-</div>
-
 </div>

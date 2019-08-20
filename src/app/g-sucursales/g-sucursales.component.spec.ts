@@ -9,8 +9,7 @@ describe('GSucursalesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [GSucursalesComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

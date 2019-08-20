@@ -6,11 +6,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./g-planilla.component.css']
 })
 export class GPlanillaComponent implements OnInit {
-
   constructor() {
   }
 
   ngOnInit() {
   }
-
 }

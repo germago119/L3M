@@ -6,11 +6,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./v-report.component.sass']
 })
 export class VReportComponent implements OnInit {
-
   constructor() {
   }
 
   ngOnInit() {
   }
-
 }

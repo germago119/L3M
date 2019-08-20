@@ -6,11 +6,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./v-admin.component.css']
 })
 export class VAdminComponent implements OnInit {
-
   constructor() {
   }
 
   ngOnInit() {
   }
-
 }

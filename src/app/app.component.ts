@@ -9,6 +9,5 @@ export class AppComponent {
   title = 'L3M';
 
   constructor() {
-
   }
 }

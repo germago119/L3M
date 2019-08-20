@@ -9,8 +9,7 @@ describe('GProveedoresComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [GProveedoresComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

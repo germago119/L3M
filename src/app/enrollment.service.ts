@@ -8,14 +8,14 @@ import {catchError} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EnrollmentService {
-
   url = 'http://localhost:3000/enroll';
 
   constructor(private httpClient: HttpClient) {
   }
 
   enroll(rol: Rol) {
-    return this.httpClient.post<any>(this.url, rol)
+    return this.httpClient
+      .post<any>(this.url, rol)
       .pipe(catchError(this.errorHandler));
   }
 
