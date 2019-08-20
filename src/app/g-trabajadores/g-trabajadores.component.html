@@ -1,49 +1,124 @@
-<div class="card-body">
-  <div class="table-editable" id="table">
-    <table class="table table-bordered table-responsive-md table-striped text-center">
-      <thead class="table-dark">
-      <tr>
-        <th class="text-center">Cédula</th>
-        <th class="text-center">Nombre Completo</th>
-        <th class="text-center">Fecha de Nacimiento</th>
-        <th class="text-center">Fecha de Ingreso Laboral</th>
-        <th class="text-center">Sucursal</th>
-        <th class="text-center">Salario por Hora</th>
-        <th class="text-center">Eliminar</th>
-      </tr>
-      </thead>
-      <tr *ngFor="let trabajador of trabajadoresList; let id = index">
-        <td>
+<div class="container-fluid">
+
+  <div class="jumbotron">
+    <h1 class="display-4">Gestion de Trabajadores</h1>
+    <p class="lead">El sistema debe permitir ingresar, modificar y eliminar trabajadores, de los cuales se guarda
+      cedula, nombre completo, fecha de nacimiento, fecha de ingreso al supermercado, sucursal donde labora y el salario
+      por hora del empleado.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <button aria-controls="collapseForm" aria-expanded="false" class="btn btn-outline-success btn-lg"
+            data-target="#collapseForm" data-toggle="collapse" role="button" type="button">AGREGAR
+    </button>
+  </div>
+
+  <div class="collapse" id="collapseForm">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted" novalidate>
+
+      <div class="row">
+        <div class="col-lg-6 form-group">
+          <label>Nombre</label>
+          <input #name="ngModel" [(ngModel)]="trabajadorModel.nombre" [class.is-invalid]="name.invalid && name.touched"
+                 class="form-control" name="name" required type="text">
+          <small [class.d-none]="name.valid || name.untouched" class="text-danger">Nombre es necesario</small>
+        </div>
+
+        <div class="col-lg-3 form-group">
+          <label>Nacimiento</label>
+          <input #nacimiento="ngModel" [(ngModel)]="trabajadorModel.nacimiento"
+                 [bsConfig]="{isAnimated: true, adaptivePosition: true}"
+                 [class.is-invalid]="nacimiento.invalid && nacimiento.touched"
+                 bsDatepicker class="form-control" name="nacimiento" placement="top"
+                 required type="text">
+          <small [class.d-none]="nacimiento.valid || nacimiento.untouched" class="text-danger">Nacimiento
+            requerida</small>
+        </div>
+
+        <div class="col-lg-3 form-group">
+          <label>Ingreso</label>
+          <input #ingreso="ngModel" [(ngModel)]="trabajadorModel.ingreso"
+                 [class.is-invalid]="ingreso.invalid && ingreso.touched" bsDatepicker
+                 class="form-control" name="ingreso" placement="top"
+                 required type="text">
+          <small [class.d-none]="ingreso.valid || ingreso.untouched" class="text-danger">Ingreso requerido</small>
+        </div>
+
+      </div>
+
+      <!--      <div class="row">-->
+      <!--        <div class="col-lg-6 form-group">-->
+      <!--          <label>Telefono</label>-->
+      <!--          <input #telefono="ngModel" [(ngModel)]="trabajadorModel.telefono" [class.is-invalid]="telefono.invalid && telefono.touched"-->
+      <!--                 class="form-control" name="telefono" required type="number">-->
+      <!--          <small [class.d-none]="telefono.valid || telefono.untouched" class="text-danger">Telefono es necesario</small>-->
+      <!--        </div>-->
+
+      <!--        <div class="col-lg-6 form-group">-->
+      <!--          <label>Administrador</label>-->
+      <!--          <input #admin="ngModel" [(ngModel)]="trabajadorModel.admin"-->
+      <!--                 [class.is-invalid]="admin.invalid && admin.touched" class="form-control" name="direccion"-->
+      <!--                 required type="text">-->
+      <!--          <small [class.d-none]="admin.valid || admin.untouched" class="text-danger">Administrador requerido</small>-->
+      <!--        </div>-->
+
+      <!--      </div>-->
+
+      <button [disabled]="userForm.form.invalid" class="btn btn-outline-primary " type="submit">Agregar
+        Sucursal
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="card-body">
+    <div class="table-editable" id="table">
+      <table class="table table-bordered table-responsive-md table-striped text-center">
+        <thead class="table-dark">
+        <tr>
+          <th class="text-center">Cédula</th>
+          <th class="text-center">Nombre Completo</th>
+          <th class="text-center">Fecha de Nacimiento</th>
+          <th class="text-center">Fecha de Ingreso Laboral</th>
+          <th class="text-center">Sucursal</th>
+          <th class="text-center">Salario por Hora</th>
+          <th class="text-center">Eliminar</th>
+        </tr>
+        </thead>
+        <tr *ngFor="let trabajador of trabajadoresList; let id = index">
+          <td>
           <span (blur)="updateList(id, 'cedula', $event)" (keyup)="changeValue(id, 'cedula', $event)"
                 contenteditable="true">{{trabajador.cedula}}</span>
-        </td>
-        <td>
+          </td>
+          <td>
           <span (blur)="updateList(id, 'nombreCompleto', $event)" (keyup)="changeValue(id, 'nombreCompleto', $event)"
                 contenteditable="true">{{trabajador.nombreCompleto}}</span>
-        </td>
-        <td>
+          </td>
+          <td>
           <span (blur)="updateList(id, 'fechaNacimiento', $event)" (keyup)="changeValue(id, 'fechaNacimiento', $event)"
                 contenteditable="true">{{trabajador.fechaNacimiento}}</span>
-        </td>
-        <td>
+          </td>
+          <td>
           <span (blur)="updateList(id, 'fechaIngreso', $event)" (keyup)="changeValue(id, 'fechaIngreso', $event)"
                 contenteditable="true">{{trabajador.fechaIngreso}}</span>
-        </td>
-        <td>
+          </td>
+          <td>
           <span (blur)="updateList(id, 'sucursal', $event)" (keyup)="changeValue(id, 'sucursal', $event)"
                 contenteditable="true">{{trabajador.sucursal}}</span>
-        </td>
-        <td>
+          </td>
+          <td>
           <span (blur)="updateList(id, 'salarioPorHora', $event)" (keyup)="changeValue(id, 'salarioPorHora', $event)"
                 contenteditable="true">{{trabajador.salarioPorHora}}</span>
-        </td>
-        <td>
+          </td>
+          <td>
                 <span class="table-remove">
                   <button (click)="remove(id)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
                           type="button">Eliminar</button>
                 </span>
-        </td>
-      </tr>
-    </table>
-  </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+</div>
+
 </div>

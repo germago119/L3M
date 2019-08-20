@@ -1,4 +1,64 @@
-<div class="card-body">
+<div class="container-fluid">
+
+  <div class="jumbotron">
+    <h1 class="display-4">Gestion de Sucursales</h1>
+    <p class="lead">El sistema debe permitir ingresar, modificar y eliminar sucursales, las cuales almacenaran un
+      nombre, dirección, teléfono, administrador.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <button aria-controls="collapseForm" aria-expanded="false" class="btn btn-outline-success btn-lg"
+            data-target="#collapseForm" data-toggle="collapse" role="button" type="button">AGREGAR
+    </button>
+  </div>
+
+  <div class="collapse" id="collapseForm">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted" novalidate>
+
+      <div class="row">
+        <div class="col-lg-6 form-group">
+          <label>Nombre</label>
+          <input #name="ngModel" [(ngModel)]="sucursalModel.nombre" [class.is-invalid]="name.invalid && name.touched"
+                 class="form-control" name="name" required type="text">
+          <small [class.d-none]="name.valid || name.untouched" class="text-danger">Nombre es necesario</small>
+        </div>
+
+        <div class="col-lg-6 form-group">
+          <label>Dirección</label>
+          <input #direc="ngModel" [(ngModel)]="sucursalModel.direccion"
+                 [class.is-invalid]="direc.invalid && direc.touched" class="form-control" name="direccion"
+                 required type="text">
+          <small [class.d-none]="direc.valid || direc.untouched" class="text-danger">Dirección requerida</small>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 form-group">
+          <label>Telefono</label>
+          <input #telefono="ngModel" [(ngModel)]="sucursalModel.telefono"
+                 [class.is-invalid]="telefono.invalid && telefono.touched"
+                 class="form-control" name="telefono" required type="number">
+          <small [class.d-none]="telefono.valid || telefono.untouched" class="text-danger">Telefono es necesario</small>
+        </div>
+
+        <div class="col-lg-6 form-group">
+          <label>Administrador</label>
+          <input #admin="ngModel" [(ngModel)]="sucursalModel.admin"
+                 [class.is-invalid]="admin.invalid && admin.touched" class="form-control" name="direccion"
+                 required type="text">
+          <small [class.d-none]="admin.valid || admin.untouched" class="text-danger">Administrador requerido</small>
+        </div>
+
+      </div>
+
+      <button [disabled]="userForm.form.invalid" class="btn btn-outline-primary " type="submit">Agregar
+        Sucursal
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="card-body">
   <div class="table-editable" id="table">
     <table class="table table-bordered table-responsive-md table-striped text-center">
       <thead class="table-dark">
@@ -37,3 +97,6 @@
     </table>
   </div>
 </div>
+
+</div>
+

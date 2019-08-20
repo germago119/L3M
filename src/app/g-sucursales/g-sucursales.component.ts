@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Rol} from '../Models/rol';
+import {Sucursal} from '../Models/sucursal';
 
 @Component({
   selector: 'app-g-sucursales',
@@ -6,6 +8,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./g-sucursales.component.css']
 })
 export class GSucursalesComponent implements OnInit {
+
+  sucursalModel = new Sucursal('', '', null, '');
+  submitted = false;
+  errorMsg = ' ';
 
   editField: string;
   sucursalList: Array<any> = [
@@ -18,6 +24,16 @@ export class GSucursalesComponent implements OnInit {
   ];
 
   constructor() {
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    // this.enrollmentService.enroll(this.rolModel)
+    //   .subscribe(
+    //     response => console.log('Success!', response),
+    //     error => this.errorMsg = error.statusText
+    //   );
+    console.log('success');
   }
 
   updateList(id: number, property: string, event: any) {

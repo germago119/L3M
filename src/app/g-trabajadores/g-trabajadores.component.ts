@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Trabajador} from '../Models/trabajador';
 
 @Component({
   selector: 'app-g-trabajadores',
@@ -6,6 +7,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./g-trabajadores.component.css']
 })
 export class GTrabajadoresComponent implements OnInit {
+
+  trabajadorModel = new Trabajador('', null, '', null, null, null);
+  submitted = false;
+
+  constructor() {
+  }
 
   editField: string;
   trabajadoresList: Array<any> = [
@@ -56,7 +63,14 @@ export class GTrabajadoresComponent implements OnInit {
     },
   ];
 
-  constructor() {
+  onSubmit() {
+    this.submitted = true;
+    // this.enrollmentService.enroll(this.rolModel)
+    //   .subscribe(
+    //     response => console.log('Success!', response),
+    //     error => this.errorMsg = error.statusText
+    //   );
+    console.log('success');
   }
 
   updateList(id: number, property: string, event: any) {

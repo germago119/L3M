@@ -21,6 +21,7 @@ import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 import {VHomeComponent} from './v-home/v-home.component';
 import {DataService} from './data.service';
 import {FormsModule} from '@angular/forms';
+import {NgxBarcodeModule} from 'ngx-barcode';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {FormsModule} from '@angular/forms';
     PaginationModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxBarcodeModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

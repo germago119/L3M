@@ -11,13 +11,12 @@ import {EnrollmentService} from '../enrollment.service';
 })
 export class GRolesComponent implements OnInit {
   rolModel = new Rol('', '');
-  topicHasError = false;
   submitted = false;
   errorMsg = ' ';
 
-  // @ts-ignore
-  constructor(private enrollmentService: EnrollmentService) {
-  }
+  // // @ts-ignore
+  // constructor(private enrollmentService: EnrollmentService) {
+  // }
 
   // @ts-ignore
   constructor(private dataService: DataService) {
@@ -39,11 +38,12 @@ export class GRolesComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.enrollmentService.enroll(this.rolModel)
-      .subscribe(
-        response => console.log('Success!', response),
-        error => this.errorMsg = error.statusText
-      );
+    // this.enrollmentService.enroll(this.rolModel)
+    //   .subscribe(
+    //     response => console.log('Success!', response),
+    //     error => this.errorMsg = error.statusText
+    //   );
+    console.log('success');
   }
 
   updateList(id: number, property: string, event: any) {

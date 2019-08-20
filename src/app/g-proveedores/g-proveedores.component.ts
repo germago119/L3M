@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Proveedor} from '../Models/proveedor';
 
 @Component({
   selector: 'app-g-proveedores',
@@ -6,6 +7,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./g-proveedores.component.css']
 })
 export class GProveedoresComponent implements OnInit {
+
+  proveedorModel = new Proveedor('', null);
+  submitted = false;
 
   editField: string;
   proveedoresList: Array<any> = [
@@ -19,6 +23,17 @@ export class GProveedoresComponent implements OnInit {
 
   constructor() {
   }
+
+  onSubmit() {
+    this.submitted = true;
+    // this.enrollmentService.enroll(this.rolModel)
+    //   .subscribe(
+    //     response => console.log('Success!', response),
+    //     error => this.errorMsg = error.statusText
+    //   );
+    console.log('success');
+  }
+
 
   updateList(id: number, property: string, event: any) {
     const editField = event.target.textContent;
