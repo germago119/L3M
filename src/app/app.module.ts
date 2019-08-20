@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +19,7 @@ import {GPlanillaComponent} from './g-planilla/g-planilla.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 import {VHomeComponent} from './v-home/v-home.component';
+import {DataService} from './data.service'
 
 @NgModule({
   declarations: [
@@ -44,9 +46,10 @@ import {VHomeComponent} from './v-home/v-home.component';
     ModalModule.forRoot(),
     ButtonsModule.forRoot(),
     PaginationModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

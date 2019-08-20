@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-g-roles',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GRolesComponent implements OnInit {
 
+  roles = [];
   editField: string;
   rolesList: Array<any> = [
     { id: 1, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas' },
@@ -31,7 +33,11 @@ export class GRolesComponent implements OnInit {
     this.editField = event.target.textContent;
   }
 
-  constructor() { }
+  constructor(private dataService: DataService) { 
+    this.dataService.getData().subscribe(data => {
+      this.roles = data;
+    });
+  }
 
   ngOnInit() {
   }
