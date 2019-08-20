@@ -60,8 +60,7 @@ export class GComprasComponent implements OnInit {
   }
 
   updateList(id: number, property: string, event: any) {
-    const editField = event.target.textContent;
-    this.comprasList[id][property] = editField;
+    this.comprasList[id][property] = event.target.textContent;
   }
 
   remove(id: any) {

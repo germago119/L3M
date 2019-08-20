@@ -20,6 +20,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 import {VHomeComponent} from './v-home/v-home.component';
 import {DataService} from './data.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {DataService} from './data.service';
     ButtonsModule.forRoot(),
     PaginationModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

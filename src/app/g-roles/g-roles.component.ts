@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
+import {Rol} from '../Models/rol';
+import {EnrollmentService} from '../enrollment.service';
+
 
 @Component({
   selector: 'app-g-roles',
@@ -7,6 +10,21 @@ import {DataService} from '../data.service';
   styleUrls: ['./g-roles.component.css']
 })
 export class GRolesComponent implements OnInit {
+  rolModel = new Rol('', '');
+  topicHasError = false;
+  submitted = false;
+  errorMsg = ' ';
+
+  // @ts-ignore
+  constructor(private enrollmentService: EnrollmentService) {
+  }
+
+  // @ts-ignore
+  constructor(private dataService: DataService) {
+    this.dataService.getData().subscribe(data => {
+      this.roles = data;
+    });
+  }
 
   roles = [];
   editField: string;
@@ -19,10 +37,13 @@ export class GRolesComponent implements OnInit {
 
   ];
 
-  constructor(private dataService: DataService) {
-    this.dataService.getData().subscribe(data => {
-      this.roles = data;
-    });
+  onSubmit() {
+    this.submitted = true;
+    this.enrollmentService.enroll(this.rolModel)
+      .subscribe(
+        response => console.log('Success!', response),
+        error => this.errorMsg = error.statusText
+      );
   }
 
   updateList(id: number, property: string, event: any) {

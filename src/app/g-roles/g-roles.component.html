@@ -11,52 +11,35 @@
   </div>
 
   <div class="collapse" id="collapseForm">
-    <form>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Email</label>
-          <input class="form-control" id="inputEmail4" placeholder="Email" type="email">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted" novalidate>
+
+      <div class="row">
+        <div class="col-lg-6 form-group">
+          <label>Nombre</label>
+          <input #name="ngModel" [(ngModel)]="rolModel.nombre" [class.is-invalid]="name.invalid && name.touched"
+                 class="form-control" name="name" required type="text">
+          <small [class.d-none]="name.valid || name.untouched" class="text-danger">Nombre es necesario</small>
         </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Password</label>
-          <input class="form-control" id="inputPassword4" placeholder="Password" type="password">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">Address</label>
-        <input class="form-control" id="inputAddress" placeholder="1234 Main St" type="text">
-      </div>
-      <div class="form-group">
-        <label for="inputAddress2">Address 2</label>
-        <input class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" type="text">
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputCity">City</label>
-          <input class="form-control" id="inputCity" type="text">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="inputState">State</label>
-          <select class="form-control" id="inputState">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputZip">Zip</label>
-          <input class="form-control" id="inputZip" type="text">
+
+        <div class="col-lg-6 form-group">
+          <label>Descripcion</label>
+          <input #descrip="ngModel" [(ngModel)]="rolModel.descripcion"
+                 [class.is-invalid]="descrip.invalid && descrip.touched" class="form-control" name="descripcion"
+                 required type="text">
+          <small [class.d-none]="descrip.valid || descrip.untouched" class="text-danger">Descripcion requerida</small>
         </div>
       </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" id="gridCheck" type="checkbox">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      </div>
-      <button class="btn btn-primary" type="submit">Sign in</button>
+
+      <button [disabled]="userForm.form.invalid || topicHasError" class="btn btn-outline-primary " type="submit">Agregar
+        Rol
+      </button>
+
     </form>
+
+    <!--  <div class="alert alert-danger" *ngIf="errorMsg">-->
+    <!--    {{errorMsg}}-->
+    <!--  </div>-->
+
   </div>
 
   <div class="card-body">

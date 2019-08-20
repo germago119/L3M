@@ -1,4 +1,7 @@
-export interface Rol {
-  'nombre': number;
-  'descripcion': number;
+export class Rol {
+  constructor(
+    public nombre: string,
+    public descripcion: string
+  ) {
+  }
 }
