@@ -26,9 +26,8 @@
         <div class="col-lg-3 form-group">
           <label>Nacimiento</label>
           <input #nacimiento="ngModel" [(ngModel)]="trabajadorModel.nacimiento"
-                 [bsConfig]="{isAnimated: true, adaptivePosition: true}"
                  [class.is-invalid]="nacimiento.invalid && nacimiento.touched"
-                 bsDatepicker class="form-control" name="nacimiento" placement="top"
+                 bsDatepicker class="form-control" name="nacimiento" placement="top" [bsConfig]="{isAnimated: true, adaptivePosition: true}"
                  required type="text">
           <small [class.d-none]="nacimiento.valid || nacimiento.untouched" class="text-danger">Nacimiento
             requerida</small>
@@ -38,33 +37,40 @@
           <label>Ingreso</label>
           <input #ingreso="ngModel" [(ngModel)]="trabajadorModel.ingreso"
                  [class.is-invalid]="ingreso.invalid && ingreso.touched" bsDatepicker
-                 class="form-control" name="ingreso" placement="top"
+                 class="form-control" name="ingreso" placement="top" [bsConfig]="{isAnimated: true, adaptivePosition: true}"
                  required type="text">
           <small [class.d-none]="ingreso.valid || ingreso.untouched" class="text-danger">Ingreso requerido</small>
         </div>
 
       </div>
 
-      <!--      <div class="row">-->
-      <!--        <div class="col-lg-6 form-group">-->
-      <!--          <label>Telefono</label>-->
-      <!--          <input #telefono="ngModel" [(ngModel)]="trabajadorModel.telefono" [class.is-invalid]="telefono.invalid && telefono.touched"-->
-      <!--                 class="form-control" name="telefono" required type="number">-->
-      <!--          <small [class.d-none]="telefono.valid || telefono.untouched" class="text-danger">Telefono es necesario</small>-->
-      <!--        </div>-->
+            <div class="row">
+              <div class="col-lg-3 form-group">
+                <label>Cedula</label>
+                <input #cedula="ngModel" [(ngModel)]="trabajadorModel.cedula" [class.is-invalid]="cedula.invalid && cedula.touched"
+                       class="form-control" name="cedula" required type="number">
+                <small [class.d-none]="cedula.valid || cedula.untouched" class="text-danger">Cedula es necesario</small>
+              </div>
 
-      <!--        <div class="col-lg-6 form-group">-->
-      <!--          <label>Administrador</label>-->
-      <!--          <input #admin="ngModel" [(ngModel)]="trabajadorModel.admin"-->
-      <!--                 [class.is-invalid]="admin.invalid && admin.touched" class="form-control" name="direccion"-->
-      <!--                 required type="text">-->
-      <!--          <small [class.d-none]="admin.valid || admin.untouched" class="text-danger">Administrador requerido</small>-->
-      <!--        </div>-->
+              <div class="col-lg-3 form-group">
+                <label>Salario por Hora</label>
+                <input #salario="ngModel" [(ngModel)]="trabajadorModel.salario" [class.is-invalid]="salario.invalid && salario.touched"
+                       class="form-control" name="salario" required type="number">
+                <small [class.d-none]="salario.valid || salario.untouched" class="text-danger">Salario por hora es necesario</small>
+              </div>
 
-      <!--      </div>-->
+              <div class="col-lg-3 form-group">
+                <label>Sucursal</label>
+                <input #sucursal="ngModel" [(ngModel)]="trabajadorModel.sucursal"
+                       [class.is-invalid]="sucursal.invalid && sucursal.touched" class="form-control" name="sucursal"
+                       required type="text">
+                <small [class.d-none]="sucursal.valid || sucursal.untouched" class="text-danger">Sucursal requerido</small>
+              </div>
+
+            </div>
 
       <button [disabled]="userForm.form.invalid" class="btn btn-outline-primary " type="submit">Agregar
-        Sucursal
+        Trabajador
       </button>
 
     </form>
