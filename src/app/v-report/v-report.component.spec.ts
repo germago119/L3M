@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { VReportComponent } from './v-report.component';
+import {VReportComponent} from './v-report.component';
 
 describe('VReportComponent', () => {
   let component: VReportComponent;
@@ -8,9 +8,9 @@ describe('VReportComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VReportComponent ]
+      declarations: [VReportComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

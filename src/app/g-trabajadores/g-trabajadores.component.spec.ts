@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GTrabajadoresComponent } from './g-trabajadores.component';
+import {GTrabajadoresComponent} from './g-trabajadores.component';
 
 describe('GTrabajadoresComponent', () => {
   let component: GTrabajadoresComponent;
@@ -8,9 +8,9 @@ describe('GTrabajadoresComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GTrabajadoresComponent ]
+      declarations: [GTrabajadoresComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

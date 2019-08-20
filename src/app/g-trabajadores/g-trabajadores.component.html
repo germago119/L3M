@@ -1,42 +1,49 @@
 <div class="card-body">
-        <div id="table" class="table-editable">
-          <table class="table table-bordered table-responsive-md table-striped text-center">
-          <thead class = "table-dark">
-            <tr>
-              <th class="text-center">Cédula</th>
-              <th class="text-center">Nombre Completo</th>
-              <th class="text-center">Fecha de Nacimiento</th>
-              <th class="text-center">Fecha de Ingreso Laboral</th>
-              <th class="text-center">Sucursal</th>
-              <th class="text-center">Salario por Hora</th>
-              <th class="text-center">Eliminar</th>
-            </tr>
-            </thead>
-            <tr *ngFor="let trabajador of trabajadoresList; let id = index">
-              <td>
-                <span (keyup)="changeValue(id, 'cedula', $event)" (blur)="updateList(id, 'cedula', $event)" contenteditable="true">{{trabajador.cedula}}</span>
-              </td>
-              <td>
-                <span (keyup)="changeValue(id, 'nombreCompleto', $event)" (blur)="updateList(id, 'nombreCompleto', $event)" contenteditable="true">{{trabajador.nombreCompleto}}</span>
-              </td>
-              <td>
-                <span (keyup)="changeValue(id, 'fechaNacimiento', $event)" (blur)="updateList(id, 'fechaNacimiento', $event)" contenteditable="true">{{trabajador.fechaNacimiento}}</span>
-              </td>
-              <td>
-                <span (keyup)="changeValue(id, 'fechaIngreso', $event)" (blur)="updateList(id, 'fechaIngreso', $event)" contenteditable="true">{{trabajador.fechaIngreso}}</span>
-              </td>
-              <td>
-                <span (keyup)="changeValue(id, 'sucursal', $event)" (blur)="updateList(id, 'sucursal', $event)" contenteditable="true">{{trabajador.sucursal}}</span>
-              </td>
-              <td>
-                <span (keyup)="changeValue(id, 'salarioPorHora', $event)" (blur)="updateList(id, 'salarioPorHora', $event)" contenteditable="true">{{trabajador.salarioPorHora}}</span>
-              </td>
-              <td>
+  <div class="table-editable" id="table">
+    <table class="table table-bordered table-responsive-md table-striped text-center">
+      <thead class="table-dark">
+      <tr>
+        <th class="text-center">Cédula</th>
+        <th class="text-center">Nombre Completo</th>
+        <th class="text-center">Fecha de Nacimiento</th>
+        <th class="text-center">Fecha de Ingreso Laboral</th>
+        <th class="text-center">Sucursal</th>
+        <th class="text-center">Salario por Hora</th>
+        <th class="text-center">Eliminar</th>
+      </tr>
+      </thead>
+      <tr *ngFor="let trabajador of trabajadoresList; let id = index">
+        <td>
+          <span (blur)="updateList(id, 'cedula', $event)" (keyup)="changeValue(id, 'cedula', $event)"
+                contenteditable="true">{{trabajador.cedula}}</span>
+        </td>
+        <td>
+          <span (blur)="updateList(id, 'nombreCompleto', $event)" (keyup)="changeValue(id, 'nombreCompleto', $event)"
+                contenteditable="true">{{trabajador.nombreCompleto}}</span>
+        </td>
+        <td>
+          <span (blur)="updateList(id, 'fechaNacimiento', $event)" (keyup)="changeValue(id, 'fechaNacimiento', $event)"
+                contenteditable="true">{{trabajador.fechaNacimiento}}</span>
+        </td>
+        <td>
+          <span (blur)="updateList(id, 'fechaIngreso', $event)" (keyup)="changeValue(id, 'fechaIngreso', $event)"
+                contenteditable="true">{{trabajador.fechaIngreso}}</span>
+        </td>
+        <td>
+          <span (blur)="updateList(id, 'sucursal', $event)" (keyup)="changeValue(id, 'sucursal', $event)"
+                contenteditable="true">{{trabajador.sucursal}}</span>
+        </td>
+        <td>
+          <span (blur)="updateList(id, 'salarioPorHora', $event)" (keyup)="changeValue(id, 'salarioPorHora', $event)"
+                contenteditable="true">{{trabajador.salarioPorHora}}</span>
+        </td>
+        <td>
                 <span class="table-remove">
-                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Eliminar</button>
+                  <button (click)="remove(id)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                          type="button">Eliminar</button>
                 </span>
-              </td>
-            </tr>
-          </table>
-        </div>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>

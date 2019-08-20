@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Rol} from './Models/rol';
 
@@ -7,11 +7,11 @@ import {Rol} from './Models/rol';
 })
 export class DataService {
 
-  constructor(private httpClient: HttpClient) { 
-      alert('Data service is working!');
+  constructor(private httpClient: HttpClient) {
+    alert('Data service is working!');
   }
 
-  getData(){
+  getData() {
     return this.httpClient.get<Rol[]>('https://jsonplaceholder.typicode.com/posts');
   }
 }

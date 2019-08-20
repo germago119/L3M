@@ -59,30 +59,33 @@
     </form>
   </div>
 
-<div class="card-body">
-        <div id="table" class="table-editable">
-          <table class="table table-bordered table-responsive-md table-striped text-center">
-          <thead class = "table-dark">
-            <tr>
-              <th class="text-center">Nombre</th>
-              <th class="text-center">Descripción</th>
-              <th class="text-center">Eliminar</th>
-            </tr>
-            </thead>
-            <tr *ngFor="let rol of rolesList; let id = index">
-              <td>
-                <span (keyup)="changeValue(id, 'nombre', $event)" (blur)="updateList(id, 'nombre', $event)" contenteditable="true">{{rol.nombre}}</span>
-              </td>
-              <td>
-                <span contenteditable="true" (keyup)="changeValue(id, 'descripcion', $event)" (blur)="updateList(id, 'descripcion', $event)">{{rol.descripcion}}</span>
-              </td>
-              <td>
+  <div class="card-body">
+    <div class="table-editable" id="table">
+      <table class="table table-bordered table-responsive-md table-striped text-center">
+        <thead class="table-dark">
+        <tr>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Descripción</th>
+          <th class="text-center">Eliminar</th>
+        </tr>
+        </thead>
+        <tr *ngFor="let rol of rolesList; let id = index">
+          <td>
+            <span (blur)="updateList(id, 'nombre', $event)" (keyup)="changeValue(id, 'nombre', $event)"
+                  contenteditable="true">{{rol.nombre}}</span>
+          </td>
+          <td>
+            <span (blur)="updateList(id, 'descripcion', $event)" (keyup)="changeValue(id, 'descripcion', $event)"
+                  contenteditable="true">{{rol.descripcion}}</span>
+          </td>
+          <td>
                 <span class="table-remove">
-                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Eliminar</button>
+                  <button (click)="remove(id)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                          type="button">Eliminar</button>
                 </span>
-              </td>
-            </tr>
-          </table>
-        </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
-

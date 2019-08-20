@@ -1,4 +1,4 @@
-export interface Rol{
-    "nombre": number;
-    "descripcion": number;
+export interface Rol {
+  'nombre': number;
+  'descripcion': number;
 }

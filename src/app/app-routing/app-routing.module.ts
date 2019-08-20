@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {Routes, RouterModule} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Routes} from '@angular/router';
 import {VAdminComponent} from '../v-admin/v-admin.component';
 import {VReportComponent} from '../v-report/v-report.component';
 import {VPuntoVentaComponent} from '../v-punto-venta/v-punto-venta.component';
 import {PagenotfoundComponent} from '../pagenotfound/pagenotfound.component';
-import {AppComponent} from '../app.component';
 import {VHomeComponent} from '../v-home/v-home.component';
 import {AHorasComponent} from '../a-horas/a-horas.component';
 import {GRolesComponent} from '../g-roles/g-roles.component';
@@ -41,4 +40,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -1,7 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="">L3M</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" routerLink="">L3M Super</a>
+  <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+          data-target="#navbarNav"
+          data-toggle="collapse" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -12,15 +14,15 @@
           Administración
         </a>
         <div aria-labelledby="navbarDropdown" class="dropdown-menu">
-          <a class="dropdown-item" routerLink="admin/roles">Gestion de Roles</a>
-          <a class="dropdown-item" routerLink="admin/sucursales">Gestion de Sucursales</a>
-          <a class="dropdown-item" routerLink="admin/trabajadores">Gestion de Trabajadores</a>
-          <a class="dropdown-item" routerLink="admin/proveedores">Gestion de Proveedores</a>
-          <a class="dropdown-item" routerLink="admin/productos">Gestion de Productos</a>
-          <a class="dropdown-item" routerLink="admin/compras">Gestion de Compras</a>
+          <a class="dropdown-item" routerLink="admin/roles">Gestión de Roles</a>
+          <a class="dropdown-item" routerLink="admin/sucursales">Gestión de Sucursales</a>
+          <a class="dropdown-item" routerLink="admin/trabajadores">Gestión de Trabajadores</a>
+          <a class="dropdown-item" routerLink="admin/proveedores">Gestión de Proveedores</a>
+          <a class="dropdown-item" routerLink="admin/productos">Gestión de Productos</a>
+          <a class="dropdown-item" routerLink="admin/compras">Gestión de Compras</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="admin/horas">Asignacion de Horas</a>
-          <a class="dropdown-item" routerLink="admin/planilla">Generacion de Planilla</a>
+          <a class="dropdown-item" routerLink="admin/horas">Asignación de Horas</a>
+          <a class="dropdown-item" routerLink="admin/planilla">Generación de Planilla</a>
         </div>
       </li>
       <li class="nav-item">
@@ -33,7 +35,6 @@
   </div>
 </nav>
 
-
-<router-outlet></router-outlet>
-<!--<app-v-admin></app-v-admin>-->
-
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

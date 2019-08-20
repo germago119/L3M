@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
 
 @Component({
@@ -11,18 +11,22 @@ export class GRolesComponent implements OnInit {
   roles = [];
   editField: string;
   rolesList: Array<any> = [
-    { id: 1, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas' },
-    { id: 2, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas' },
-    { id: 3, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas' },
-    { id: 4, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas' },
-    { id: 5, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas' },
-   
+    {id: 1, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
+    {id: 2, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
+    {id: 3, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
+    {id: 4, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
+    {id: 5, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
+
   ];
 
+  constructor(private dataService: DataService) {
+    this.dataService.getData().subscribe(data => {
+      this.roles = data;
+    });
+  }
 
   updateList(id: number, property: string, event: any) {
-    const editField = event.target.textContent;
-    this.rolesList[id][property] = editField;
+    this.rolesList[id][property] = event.target.textContent;
   }
 
   remove(id: any) {
@@ -31,12 +35,6 @@ export class GRolesComponent implements OnInit {
 
   changeValue(id: number, property: string, event: any) {
     this.editField = event.target.textContent;
-  }
-
-  constructor(private dataService: DataService) { 
-    this.dataService.getData().subscribe(data => {
-      this.roles = data;
-    });
   }
 
   ngOnInit() {

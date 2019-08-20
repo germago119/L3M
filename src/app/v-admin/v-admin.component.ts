@@ -9,7 +9,7 @@ export class VAdminComponent implements OnInit {
 
   constructor() {
   }
-  
+
   ngOnInit() {
   }
 

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {DataService} from './data.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import {DataService} from './data.service';
 export class AppComponent {
   title = 'L3M';
 
-  constructor(){
+  constructor() {
 
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-g-compras',
@@ -9,13 +9,55 @@ export class GComprasComponent implements OnInit {
 
   editField: string;
   comprasList: Array<any> = [
-    { id: 1, descripcion: '20 unidadades', fechaRealCompra: '12/12/12', fechaRegistroCompra: '12/12/12', proveedor: 'Dos pinos', fotoCompra: 'asfasfa', sucursal: 'Alajuela' },
-    { id: 2, descripcion: '20 unidadades', fechaRealCompra: '12/12/12', fechaRegistroCompra: '12/12/12', proveedor: 'Dos pinos', fotoCompra: 'asfasfa', sucursal: 'Alajuela' },
-    { id: 3, descripcion: '20 unidadades', fechaRealCompra: '12/12/12', fechaRegistroCompra: '12/12/12', proveedor: 'Dos pinos', fotoCompra: 'asfasfa', sucursal: 'Alajuela' },
-    { id: 4, descripcion: '20 unidadades', fechaRealCompra: '12/12/12', fechaRegistroCompra: '12/12/12', proveedor: 'Dos pinos', fotoCompra: 'asfasfa', sucursal: 'Alajuela' },
-    { id: 5, descripcion: '20 unidadades', fechaRealCompra: '12/12/12', fechaRegistroCompra: '12/12/12', proveedor: 'Dos pinos', fotoCompra: 'asfasfa', sucursal: 'Alajuela' },
+    {
+      id: 1,
+      descripcion: '20 unidadades',
+      fechaRealCompra: '12/12/12',
+      fechaRegistroCompra: '12/12/12',
+      proveedor: 'Dos pinos',
+      fotoCompra: 'asfasfa',
+      sucursal: 'Alajuela'
+    },
+    {
+      id: 2,
+      descripcion: '20 unidadades',
+      fechaRealCompra: '12/12/12',
+      fechaRegistroCompra: '12/12/12',
+      proveedor: 'Dos pinos',
+      fotoCompra: 'asfasfa',
+      sucursal: 'Alajuela'
+    },
+    {
+      id: 3,
+      descripcion: '20 unidadades',
+      fechaRealCompra: '12/12/12',
+      fechaRegistroCompra: '12/12/12',
+      proveedor: 'Dos pinos',
+      fotoCompra: 'asfasfa',
+      sucursal: 'Alajuela'
+    },
+    {
+      id: 4,
+      descripcion: '20 unidadades',
+      fechaRealCompra: '12/12/12',
+      fechaRegistroCompra: '12/12/12',
+      proveedor: 'Dos pinos',
+      fotoCompra: 'asfasfa',
+      sucursal: 'Alajuela'
+    },
+    {
+      id: 5,
+      descripcion: '20 unidadades',
+      fechaRealCompra: '12/12/12',
+      fechaRegistroCompra: '12/12/12',
+      proveedor: 'Dos pinos',
+      fotoCompra: 'asfasfa',
+      sucursal: 'Alajuela'
+    },
   ];
 
+  constructor() {
+  }
 
   updateList(id: number, property: string, event: any) {
     const editField = event.target.textContent;
@@ -29,8 +71,6 @@ export class GComprasComponent implements OnInit {
   changeValue(id: number, property: string, event: any) {
     this.editField = event.target.textContent;
   }
-
-  constructor() { }
 
   ngOnInit() {
   }

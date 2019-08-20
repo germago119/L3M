@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-g-proveedores',
@@ -9,14 +9,16 @@ export class GProveedoresComponent implements OnInit {
 
   editField: string;
   proveedoresList: Array<any> = [
-    { id: 1, nombreCompleto: 'Dos pinos S.A', cedula: 12512512 },
-    { id: 2, nombreCompleto: 'Dos pinos S.A', cedula: 12512512 },
-    { id: 3, nombreCompleto: 'Dos pinos S.A', cedula: 12512512 },
-    { id: 4, nombreCompleto: 'Dos pinos S.A', cedula: 12512512 },
-    { id: 5, nombreCompleto: 'Dos pinos S.A', cedula: 12512512 },
-   
+    {id: 1, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
+    {id: 2, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
+    {id: 3, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
+    {id: 4, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
+    {id: 5, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
+
   ];
 
+  constructor() {
+  }
 
   updateList(id: number, property: string, event: any) {
     const editField = event.target.textContent;
@@ -30,8 +32,6 @@ export class GProveedoresComponent implements OnInit {
   changeValue(id: number, property: string, event: any) {
     this.editField = event.target.textContent;
   }
-
-  constructor() { }
 
   ngOnInit() {
   }

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GSucursalesComponent } from './g-sucursales.component';
+import {GSucursalesComponent} from './g-sucursales.component';
 
 describe('GSucursalesComponent', () => {
   let component: GSucursalesComponent;
@@ -8,9 +8,9 @@ describe('GSucursalesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GSucursalesComponent ]
+      declarations: [GSucursalesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

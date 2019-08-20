@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { VPuntoVentaComponent } from './v-punto-venta.component';
+import {VPuntoVentaComponent} from './v-punto-venta.component';
 
 describe('VPuntoVentaComponent', () => {
   let component: VPuntoVentaComponent;
@@ -8,9 +8,9 @@ describe('VPuntoVentaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VPuntoVentaComponent ]
+      declarations: [VPuntoVentaComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

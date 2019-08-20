@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GRolesComponent } from './g-roles.component';
+import {GRolesComponent} from './g-roles.component';
 
 describe('GRolesComponent', () => {
   let component: GRolesComponent;
@@ -8,9 +8,9 @@ describe('GRolesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GRolesComponent ]
+      declarations: [GRolesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
