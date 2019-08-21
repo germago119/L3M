@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
 import {Rol} from '../Models/rol';
-import {EnrollmentService} from '../enrollment.service';
 
 
 @Component({
@@ -14,11 +13,6 @@ export class GRolesComponent implements OnInit {
   submitted = false;
   errorMsg = ' ';
 
-  // // @ts-ignore
-  // constructor(private enrollmentService: EnrollmentService) {
-  // }
-
-  // @ts-ignore
 
   roles = [];
 
@@ -29,11 +23,11 @@ export class GRolesComponent implements OnInit {
     });
   }*/
 
-  constructor(private dataService: DataService){
-    this.dataService.getData();
+  constructor(private dataService: DataService) {
+    //this.dataService.getData();
   }
 
-  
+
   editField: string;
   rolesList: Array<any> = [
     {id: 1, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
@@ -44,14 +38,11 @@ export class GRolesComponent implements OnInit {
 
   ];
 
-  onSubmit() {
-    this.submitted = true;
-    // this.enrollmentService.enroll(this.rolModel)
-    //   .subscribe(
-    //     response => console.log('Success!', response),
-    //     error => this.errorMsg = error.statusText
-    //   );
-    console.log('success');
+  onSubmit(nR: string, dR: string) {
+    console.log(nR);
+    console.log(dR);
+
+    this.dataService.postRol(nR, dR);
   }
 
   updateList(id: number, property: string, event: any) {

@@ -11,19 +11,21 @@
   </div>
 
   <div class="collapse" id="collapseForm">
-    <form #userForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted" novalidate>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(rolModel.nombreRol, rolModel.descripcionRol)" *ngIf="!submitted"
+          novalidate>
 
       <div class="row">
+
         <div class="col-lg-6 form-group">
           <label>Nombre</label>
-          <input #name="ngModel" [(ngModel)]="rolModel.nombre" [class.is-invalid]="name.invalid && name.touched"
+          <input #name="ngModel" [(ngModel)]="rolModel.nombreRol" [class.is-invalid]="name.invalid && name.touched"
                  class="form-control" name="name" required type="text">
           <small [class.d-none]="name.valid || name.untouched" class="text-danger">Nombre es necesario</small>
         </div>
 
         <div class="col-lg-6 form-group">
           <label>Descripcion</label>
-          <input #descrip="ngModel" [(ngModel)]="rolModel.descripcion"
+          <input #descrip="ngModel" [(ngModel)]="rolModel.descripcionRol"
                  [class.is-invalid]="descrip.invalid && descrip.touched" class="form-control" name="descripcion"
                  required type="text">
           <small [class.d-none]="descrip.valid || descrip.untouched" class="text-danger">Descripcion requerida</small>

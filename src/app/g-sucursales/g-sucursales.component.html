@@ -12,7 +12,9 @@
   </div>
 
   <div class="collapse" id="collapseForm">
-    <form #userForm="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted" novalidate>
+    <form #userForm="ngForm"
+          (ngSubmit)="onSubmit(sucursalModel.nombre,sucursalModel.direccion, sucursalModel.telefono,sucursalModel.admin)"
+          *ngIf="!submitted" novalidate>
 
       <div class="row">
         <div class="col-lg-6 form-group">

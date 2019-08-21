@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Rol} from '../Models/rol';
 import {Sucursal} from '../Models/sucursal';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-g-sucursales',
@@ -23,17 +23,11 @@ export class GSucursalesComponent implements OnInit {
 
   ];
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
-  onSubmit() {
-    this.submitted = true;
-    // this.enrollmentService.enroll(this.rolModel)
-    //   .subscribe(
-    //     response => console.log('Success!', response),
-    //     error => this.errorMsg = error.statusText
-    //   );
-    console.log('success');
+  onSubmit(nS: string, dS: string, tS: number, aS: string) {
+    this.dataService.postSucursales(nS, dS, tS, aS);
   }
 
   updateList(id: number, property: string, event: any) {
