@@ -1,7 +1,7 @@
 export class Rol {
   constructor(
-    public nombre: string,
-    public descripcion: string
+    public nombreRol: string,
+    public descripcionRol: string
   ) {
   }
 }

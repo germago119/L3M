@@ -19,13 +19,21 @@ export class GRolesComponent implements OnInit {
   // }
 
   // @ts-ignore
-  constructor(private dataService: DataService) {
-    this.dataService.getData().subscribe(data => {
-      this.roles = data;
-    });
-  }
 
   roles = [];
+
+  /*constructor(private dataService: DataService) {
+    this.dataService.getData().subscribe(data => {
+      this.roles = data;
+      console.log(data);
+    });
+  }*/
+
+  constructor(private dataService: DataService){
+    this.dataService.getData();
+  }
+
+  
   editField: string;
   rolesList: Array<any> = [
     {id: 1, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
