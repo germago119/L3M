@@ -51,16 +51,16 @@
         </thead>
         <tr *ngFor="let proveedor of proveedoresList; let id = index">
           <td>
-          <span (blur)="updateList(id, 'nombreCompleto', $event)" (keyup)="changeValue(id, 'nombreCompleto', $event)"
+          <span (blur)="updateList(id, 'nombreProveedor', $event)" (keyup)="changeValue(id, 'nombreProveedor', $event)"
                 contenteditable="true">{{proveedor.nombreProveedor}}</span>
           </td>
           <td>
-          <span (blur)="updateList(id, 'cedula', $event)" (keyup)="changeValue(id, 'cedula', $event)"
+          <span (blur)="updateList(id, 'cedulaProveedor', $event)" (keyup)="changeValue(id, 'cedulaProveedor', $event)"
                 contenteditable="true">{{proveedor.cedulaProveedor}}</span>
           </td>
           <td>
                 <span class="table-remove">
-                  <button (click)="remove(id)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                  <button (click)="remove(id,proveedor.cedulaProveedor)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
                           type="button">Eliminar</button>
                 </span>
           </td>

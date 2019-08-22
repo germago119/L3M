@@ -22,8 +22,9 @@ export class GComprasComponent implements OnInit {
     this.comprasList[id][property] = event.target.textContent;
   }
 
-  remove(id: any) {
+  remove(id: any, fotoCompra:string) {
     this.comprasList.splice(id, 1);
+    this.dataService.deleteDataCompras(fotoCompra);
   }
 
   changeValue(id: number, property: string, event: any) {

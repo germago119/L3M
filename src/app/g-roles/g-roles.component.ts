@@ -52,8 +52,9 @@ export class GRolesComponent implements OnInit {
     this.rolesList[id][property] = event.target.textContent;
   }
 
-  remove(id: any) {
+  remove(id: any, nombreRol:string) {
     this.rolesList.splice(id, 1);
+    this.dataService.deleteDataRoles(nombreRol);
   }
 
   changeValue(id: number, property: string, event: any) {

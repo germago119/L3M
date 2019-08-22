@@ -72,24 +72,24 @@
       </thead>
       <tr *ngFor="let sucursal of sucursalList; let id = index">
         <td>
-          <span (blur)="updateList(id, 'nombre', $event)" (keyup)="changeValue(id, 'nombre', $event)"
+          <span (blur)="updateList(id, 'nombreSucursal', $event)" (keyup)="changeValue(id, 'nombreSucursal', $event)"
                 contenteditable="true">{{sucursal.nombreSucursal}}</span>
         </td>
         <td>
-          <span (blur)="updateList(id, 'direccion', $event)" (keyup)="changeValue(id, 'direccion', $event)"
+          <span (blur)="updateList(id, 'direccionSucursal', $event)" (keyup)="changeValue(id, 'direccionSucursal', $event)"
                 contenteditable="true">{{sucursal.direccionSucursal}}</span>
         </td>
         <td>
-          <span (blur)="updateList(id, 'telefono', $event)" (keyup)="changeValue(id, 'telefono', $event)"
+          <span (blur)="updateList(id, 'telefonoSucursal', $event)" (keyup)="changeValue(id, 'telefonoSucursal', $event)"
                 contenteditable="true">{{sucursal.telefonoSucursal}}</span>
         </td>
         <td>
-          <span (blur)="updateList(id, 'administrador', $event)" (keyup)="changeValue(id, 'administrador', $event)"
+          <span (blur)="updateList(id, 'administradorSucursal', $event)" (keyup)="changeValue(id, 'administradorSucursal', $event)"
                 contenteditable="true">{{sucursal.administradorSucursal}}</span>
         </td>
         <td>
                   <span class="table-remove">
-                    <button (click)="remove(id)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                    <button (click)="remove(id,sucursal.nombreSucursal)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
                             type="button">Eliminar</button>
                   </span>
         </td>

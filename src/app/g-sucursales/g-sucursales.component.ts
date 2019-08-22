@@ -36,8 +36,9 @@ export class GSucursalesComponent implements OnInit {
     this.sucursalList[id][property] = editField;
   }
 
-  remove(id: any) {
+  remove(id: any, nombreSucursal:string) {
     this.sucursalList.splice(id, 1);
+    this.dataService.deleteDataSucursales(nombreSucursal);
   }
 
   changeValue(id: number, property: string, event: any) {

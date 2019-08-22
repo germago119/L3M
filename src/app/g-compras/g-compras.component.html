@@ -14,7 +14,7 @@
       </thead>
       <tr *ngFor="let compra of comprasList; let id = index">
         <td>
-          <span (blur)="updateList(id, 'descripcion', $event)" (keyup)="changeValue(id, 'descripcion', $event)"
+          <span (blur)="updateList(id, 'descripcionCompra', $event)" (keyup)="changeValue(id, 'descripcionCompra', $event)"
                 contenteditable="true">{{compra.descripcionCompra}}</span>
         </td>
         <td>
@@ -27,7 +27,7 @@
                 contenteditable="true">{{compra.fechaRegistroCompra}}</span>
         </td>
         <td>
-          <span (blur)="updateList(id, 'proveedor', $event)" (keyup)="changeValue(id, 'proveedor', $event)"
+          <span (blur)="updateList(id, 'proveedorCompra', $event)" (keyup)="changeValue(id, 'proveedorCompra', $event)"
                 contenteditable="true">{{compra.proveedorCompra}}</span>
         </td>
         <td>
@@ -35,13 +35,13 @@
                 contenteditable="true">{{compra.fotoCompra}}</span>
         </td>
         <td>
-          <span (blur)="updateList(id, 'sucursal', $event)" (keyup)="changeValue(id, 'sucursal', $event)"
+          <span (blur)="updateList(id, 'sucursalRegistraCompra', $event)" (keyup)="changeValue(id, 'sucursalRegistraCompra', $event)"
                 contenteditable="true">{{compra.sucursalRegistraCompra}}</span>
         </td>
 
         <td>
                 <span class="table-remove">
-                  <button (click)="remove(id)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                  <button (click)="remove(id,compra.fotoCompra)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
                           type="button">Eliminar</button>
                 </span>
         </td>

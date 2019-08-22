@@ -19,56 +19,56 @@
         <tr *ngFor="let producto of productosList; let id = index">
           <td>
             <span
-              (blur)="updateList(id, 'nombre', $event)"
-              (keyup)="changeValue(id, 'nombre', $event)"
+              (blur)="updateList(id, 'nombreProducto', $event)"
+              (keyup)="changeValue(id, 'nombreProducto', $event)"
               contenteditable="true"
             >{{ producto.nombreProducto }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'descripcion', $event)"
-              (keyup)="changeValue(id, 'descripcion', $event)"
+              (blur)="updateList(id, 'descripcionProducto', $event)"
+              (keyup)="changeValue(id, 'descripcionProducto', $event)"
               contenteditable="true"
             >{{ producto.descripcionProducto }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'codigoBarras', $event)"
-              (keyup)="changeValue(id, 'codigoBarras', $event)"
+              (blur)="updateList(id, 'codigoBarraProducto', $event)"
+              (keyup)="changeValue(id, 'codigoBarraProducto', $event)"
               contenteditable="true"
             >{{ producto.codigoBarraProducto }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'proveedor', $event)"
-              (keyup)="changeValue(id, 'proveedor', $event)"
+              (blur)="updateList(id, 'proveedorProducto', $event)"
+              (keyup)="changeValue(id, 'proveedorProducto', $event)"
               contenteditable="true"
             >{{ producto.proveedorProducto }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'precio', $event)"
-              (keyup)="changeValue(id, 'precio', $event)"
+              (blur)="updateList(id, 'precioProducto', $event)"
+              (keyup)="changeValue(id, 'precioProducto', $event)"
               contenteditable="true"
             >{{ producto.precioProducto }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'impuesto', $event)"
-              (keyup)="changeValue(id, 'impuesto', $event)"
+              (blur)="updateList(id, 'impuestoProducto', $event)"
+              (keyup)="changeValue(id, 'impuestoProducto', $event)"
               contenteditable="true"
             >{{ producto.impuestoProducto }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'descuento', $event)"
-              (keyup)="changeValue(id, 'descuento', $event)"
+              (blur)="updateList(id, 'descuentoProducto', $event)"
+              (keyup)="changeValue(id, 'descuentoProducto', $event)"
               contenteditable="true"
             >{{ producto.descuentoProducto }}</span
             >
@@ -86,7 +86,7 @@
           <td>
             <span class="table-remove">
               <button
-                (click)="remove(id)"
+                (click)="remove(id,producto.codigoBarraProducto)"
                 class="my-0"
                 color="danger"
                 mdbBtn

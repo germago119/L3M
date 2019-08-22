@@ -37,8 +37,9 @@ export class GProveedoresComponent implements OnInit {
     this.proveedoresList[id][property] = editField;
   }
 
-  remove(id: any) {
+  remove(id: any, cedulaProveedor:string) {
     this.proveedoresList.splice(id, 1);
+    this.dataService.deleteDataProveedores(cedulaProveedor);
   }
 
   changeValue(id: number, property: string, event: any) {

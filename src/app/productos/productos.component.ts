@@ -23,8 +23,9 @@ export class ProductosComponent implements OnInit {
     this.productosList[id][property] = editField;
   }
 
-  remove(id: any) {
+  remove(id: any, codigoBarraProducto:number) {
     this.productosList.splice(id, 1);
+    this.dataService.deleteDataProductos(codigoBarraProducto);
   }
 
   changeValue(id: number, property: string, event: any) {

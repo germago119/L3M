@@ -40,4 +40,100 @@ export class DataService {
     return this.httpClient.get<Compra[]>("/api/Compras");
   }
 
+  deleteDataRoles(idRol: string){
+    console.log(idRol);
+    this.httpClient.delete("/api/Roles/" + idRol)
+    .subscribe(
+        (val) => {
+            console.log("DELETE call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("DELETE call in error", response);
+        },
+        () => {
+            console.log("The DELETE observable is now completed.");
+        });
+  }
+
+  deleteDataSucursales(idSucursal: string){
+    console.log(idSucursal);
+    this.httpClient.delete("/api/Sucursales/" + idSucursal)
+    .subscribe(
+        (val) => {
+            console.log("DELETE call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("DELETE call in error", response);
+        },
+        () => {
+            console.log("The DELETE observable is now completed.");
+        });
+  }
+
+  deleteDataTrabajadores(idTrabajador: number){
+    console.log(idTrabajador);
+    this.httpClient.delete("/api/Trabajadores/" + idTrabajador.toString())
+    .subscribe(
+        (val) => {
+            console.log("DELETE call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("DELETE call in error", response);
+        },
+        () => {
+            console.log("The DELETE observable is now completed.");
+        });
+  }
+
+  deleteDataProveedores(idProveedor: string){
+    console.log(idProveedor);
+    this.httpClient.delete("/api/Proveedores/" + idProveedor)
+    .subscribe(
+        (val) => {
+            console.log("DELETE call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("DELETE call in error", response);
+        },
+        () => {
+            console.log("The DELETE observable is now completed.");
+        });
+  }
+
+  deleteDataProductos(idProducto: number){
+    console.log(idProducto);
+    this.httpClient.delete("/api/Productos/" + idProducto.toString())
+    .subscribe(
+        (val) => {
+            console.log("DELETE call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("DELETE call in error", response);
+        },
+        () => {
+            console.log("The DELETE observable is now completed.");
+        });
+  }
+
+  deleteDataCompras(idCompra: string){
+    console.log(idCompra);
+    this.httpClient.delete("/api/Compras/" + idCompra)
+    .subscribe(
+        (val) => {
+            console.log("DELETE call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("DELETE call in error", response);
+        },
+        () => {
+            console.log("The DELETE observable is now completed.");
+        });
+  }
+
 }

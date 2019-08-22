@@ -36,8 +36,9 @@ export class GTrabajadoresComponent implements OnInit {
     this.trabajadoresList[id][property] = editField;
   }
 
-  remove(id: any) {
+  remove(id: any, cedulaTrabajador:number) {
     this.trabajadoresList.splice(id, 1);
+    this.dataService.deleteDataTrabajadores(cedulaTrabajador);
   }
 
   changeValue(id: number, property: string, event: any) {
