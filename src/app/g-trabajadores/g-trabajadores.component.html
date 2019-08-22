@@ -236,8 +236,10 @@
           <td>
             <span>
               <button
-                (click)="update(trabajador.cedulaTrabajador,trabajador.nombreCompletoTrabajador,
-                trabajador.fechaNacimientoTrabajador,trabajador.fechaIngresoTrabajador,
+                (click)="update(trabajador.cedulaTrabajador,
+                trabajador.nombreCompletoTrabajador,
+                trabajador.fechaNacimientoTrabajador.toString(),
+                trabajador.fechaIngresoTrabajador.toString(),
                 trabajador.sucursalTrabajador,trabajador.salarioHoraTrabajador)"
                 class="my-0"
                 color="danger"

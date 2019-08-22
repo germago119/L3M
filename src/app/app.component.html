@@ -65,15 +65,46 @@
       </ul>
     </div>
   </nav>
-
-  <div class="container-fluid">
-    <router-outlet></router-outlet>
-  </div>
 </div>
 
 <!--TODO LO MOVIL-->
 <div *showItDevice="['mobile', 'tablet']">
   <!--NAV MOVIL ACA CON 3 LINKS (ROUTING)-->
-  <p>WORKS</p>
+  <nav class="navbar navbar-expand-md navbar-dark bg-info">
+    =
+    <a class="navbar-brand" routerLink="">L3M Super</a>
+    <button
+      aria-controls="navMobile"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      class="navbar-toggler"
+      data-target="#navMobile"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMobile">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="admin/trabajadores">Gestion Trabajadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="admin/compras">Gestion Compras</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="admin/horas">Asignación de Horas</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <!--ENFOCARSE EN QUE LOS 3 VIEWS QUE OCUPAN MOVIL ESTEN BIEN OPTIMIZADOS PARA SER RESPONSIVE-->
 </div>
+
+
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+
+
+

@@ -9,7 +9,7 @@ import {DataService} from '../data.service';
 })
 export class GTrabajadoresComponent implements OnInit {
 
-  trabajadorModel = new Trabajador(null, '', null, null, '', null);
+  trabajadorModel = new Trabajador(null, '', null, null, '', null, null, null);
   submitted = false;
 
   constructor(private dataService: DataService) {

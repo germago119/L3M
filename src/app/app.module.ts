@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {VAdminComponent} from './v-admin/v-admin.component';
@@ -53,7 +54,8 @@ import {ResponsiveModule} from 'ngx-responsive';
     HttpClientModule,
     FormsModule,
     NgxBarcodeModule,
-    ResponsiveModule.forRoot()
+    ResponsiveModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
