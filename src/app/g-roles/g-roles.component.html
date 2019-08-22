@@ -56,16 +56,16 @@
         </thead>
         <tr *ngFor="let rol of rolesList; let id = index">
           <td>
-            <span (blur)="updateList(id, 'nombre', $event)" (keyup)="changeValue(id, 'nombre', $event)"
-                  contenteditable="true">{{rol.nombre}}</span>
+            <span (blur)="updateList(id, 'nombreRol', $event)" (keyup)="changeValue(id, 'nombreRol', $event)"
+                  contenteditable="true">{{rol.nombreRol}}</span>
           </td>
           <td>
-            <span (blur)="updateList(id, 'descripcion', $event)" (keyup)="changeValue(id, 'descripcion', $event)"
-                  contenteditable="true">{{rol.descripcion}}</span>
+            <span (blur)="updateList(id, 'descripcionRol', $event)" (keyup)="changeValue(id, 'descripcionRol', $event)"
+                  contenteditable="true">{{rol.descripcionRol}}</span>
           </td>
           <td>
                 <span class="table-remove">
-                  <button (click)="remove(id)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                  <button (click)="remove(id,rol.nombreRol)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
                           type="button">Eliminar</button>
                 </span>
           </td>

@@ -14,8 +14,6 @@ export class GRolesComponent implements OnInit {
   errorMsg = ' ';
 
 
-  roles = [];
-
   /*constructor(private dataService: DataService) {
     this.dataService.getData().subscribe(data => {
       this.roles = data;
@@ -23,20 +21,16 @@ export class GRolesComponent implements OnInit {
     });
   }*/
 
-  constructor(private dataService: DataService) {
-    //this.dataService.getData();
+  editField: string;
+  rolesList: Array<Rol> = [];
+
+
+  constructor(private dataService: DataService){
+    this.dataService.getDataRoles().subscribe(data => {
+      this.rolesList = data;
+    });
   }
 
-
-  editField: string;
-  rolesList: Array<any> = [
-    {id: 1, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
-    {id: 2, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
-    {id: 3, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
-    {id: 4, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
-    {id: 5, nombre: 'Cajero', descripcion: 'Encargado de atender las cajas'},
-
-  ];
 
   onSubmit(nR: string, dR: string) {
     console.log(nR);
@@ -49,8 +43,9 @@ export class GRolesComponent implements OnInit {
     this.rolesList[id][property] = event.target.textContent;
   }
 
-  remove(id: any) {
+  remove(id: any, nombreRol:string) {
     this.rolesList.splice(id, 1);
+    this.dataService.deleteDataRoles(nombreRol);
   }
 
   changeValue(id: number, property: string, event: any) {

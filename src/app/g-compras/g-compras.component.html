@@ -14,8 +14,8 @@
       </thead>
       <tr *ngFor="let compra of comprasList; let id = index">
         <td>
-          <span (blur)="updateList(id, 'descripcion', $event)" (keyup)="changeValue(id, 'descripcion', $event)"
-                contenteditable="true">{{compra.descripcion}}</span>
+          <span (blur)="updateList(id, 'descripcionCompra', $event)" (keyup)="changeValue(id, 'descripcionCompra', $event)"
+                contenteditable="true">{{compra.descripcionCompra}}</span>
         </td>
         <td>
           <span (blur)="updateList(id, 'fechaRealCompra', $event)" (keyup)="changeValue(id, 'fechaRealCompra', $event)"
@@ -27,21 +27,21 @@
                 contenteditable="true">{{compra.fechaRegistroCompra}}</span>
         </td>
         <td>
-          <span (blur)="updateList(id, 'proveedor', $event)" (keyup)="changeValue(id, 'proveedor', $event)"
-                contenteditable="true">{{compra.proveedor}}</span>
+          <span (blur)="updateList(id, 'proveedorCompra', $event)" (keyup)="changeValue(id, 'proveedorCompra', $event)"
+                contenteditable="true">{{compra.proveedorCompra}}</span>
         </td>
         <td>
           <span (blur)="updateList(id, 'fotoCompra', $event)" (keyup)="changeValue(id, 'fotoCompra', $event)"
                 contenteditable="true">{{compra.fotoCompra}}</span>
         </td>
         <td>
-          <span (blur)="updateList(id, 'sucursal', $event)" (keyup)="changeValue(id, 'sucursal', $event)"
-                contenteditable="true">{{compra.sucursal}}</span>
+          <span (blur)="updateList(id, 'sucursalRegistraCompra', $event)" (keyup)="changeValue(id, 'sucursalRegistraCompra', $event)"
+                contenteditable="true">{{compra.sucursalRegistraCompra}}</span>
         </td>
 
         <td>
                 <span class="table-remove">
-                  <button (click)="remove(id)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                  <button (click)="remove(id,compra.fotoCompra)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
                           type="button">Eliminar</button>
                 </span>
         </td>

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Proveedor} from '../Models/proveedor';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-g-proveedores',
@@ -8,20 +9,16 @@ import {Proveedor} from '../Models/proveedor';
 })
 export class GProveedoresComponent implements OnInit {
 
-  proveedorModel = new Proveedor('', null);
+  proveedorModel = new Proveedor('', '');
   submitted = false;
 
   editField: string;
-  proveedoresList: Array<any> = [
-    {id: 1, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
-    {id: 2, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
-    {id: 3, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
-    {id: 4, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
-    {id: 5, nombreCompleto: 'Dos pinos S.A', cedula: 12512512},
+  proveedoresList: Array<Proveedor> = [];
 
-  ];
-
-  constructor() {
+  constructor(private dataService:DataService) {
+    this.dataService.getDataProveedores().subscribe(data=>{
+      this.proveedoresList = data;
+    });
   }
 
   onSubmit() {
@@ -40,8 +37,9 @@ export class GProveedoresComponent implements OnInit {
     this.proveedoresList[id][property] = editField;
   }
 
-  remove(id: any) {
+  remove(id: any, cedulaProveedor:string) {
     this.proveedoresList.splice(id, 1);
+    this.dataService.deleteDataProveedores(cedulaProveedor);
   }
 
   changeValue(id: number, property: string, event: any) {

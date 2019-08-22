@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Compra} from '../Models/compra';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-g-compras',
@@ -8,63 +10,21 @@ import {Component, OnInit} from '@angular/core';
 export class GComprasComponent implements OnInit {
 
   editField: string;
-  comprasList: Array<any> = [
-    {
-      id: 1,
-      descripcion: '20 unidadades',
-      fechaRealCompra: '12/12/12',
-      fechaRegistroCompra: '12/12/12',
-      proveedor: 'Dos pinos',
-      fotoCompra: 'asfasfa',
-      sucursal: 'Alajuela'
-    },
-    {
-      id: 2,
-      descripcion: '20 unidadades',
-      fechaRealCompra: '12/12/12',
-      fechaRegistroCompra: '12/12/12',
-      proveedor: 'Dos pinos',
-      fotoCompra: 'asfasfa',
-      sucursal: 'Alajuela'
-    },
-    {
-      id: 3,
-      descripcion: '20 unidadades',
-      fechaRealCompra: '12/12/12',
-      fechaRegistroCompra: '12/12/12',
-      proveedor: 'Dos pinos',
-      fotoCompra: 'asfasfa',
-      sucursal: 'Alajuela'
-    },
-    {
-      id: 4,
-      descripcion: '20 unidadades',
-      fechaRealCompra: '12/12/12',
-      fechaRegistroCompra: '12/12/12',
-      proveedor: 'Dos pinos',
-      fotoCompra: 'asfasfa',
-      sucursal: 'Alajuela'
-    },
-    {
-      id: 5,
-      descripcion: '20 unidadades',
-      fechaRealCompra: '12/12/12',
-      fechaRegistroCompra: '12/12/12',
-      proveedor: 'Dos pinos',
-      fotoCompra: 'asfasfa',
-      sucursal: 'Alajuela'
-    },
-  ];
+  comprasList: Array<Compra> = [];
 
-  constructor() {
+  constructor(private dataService:DataService) {
+    this.dataService.getDataCompras().subscribe(data => {
+      this.comprasList = data;
+    });
   }
 
   updateList(id: number, property: string, event: any) {
     this.comprasList[id][property] = event.target.textContent;
   }
 
-  remove(id: any) {
+  remove(id: any, fotoCompra:string) {
     this.comprasList.splice(id, 1);
+    this.dataService.deleteDataCompras(fotoCompra);
   }
 
   changeValue(id: number, property: string, event: any) {

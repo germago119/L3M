@@ -12,18 +12,13 @@ export class GSucursalesComponent implements OnInit {
   sucursalModel = new Sucursal('', '', null, '');
   submitted = false;
   errorMsg = ' ';
-
   editField: string;
-  sucursalList: Array<any> = [
-    {id: 1, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
-    {id: 2, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
-    {id: 3, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
-    {id: 4, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
-    {id: 5, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
+  sucursalList: Array<Sucursal> = [];
 
-  ];
-
-  constructor(private dataService: DataService) {
+  constructor(private dataService:DataService) {
+    this.dataService.getDataSucursales().subscribe(data =>{
+      this.sucursalList = data;
+    });
   }
 
   onSubmit(nS: string, dS: string, tS: number, aS: string) {
@@ -35,8 +30,9 @@ export class GSucursalesComponent implements OnInit {
     this.sucursalList[id][property] = editField;
   }
 
-  remove(id: any) {
+  remove(id: any, nombreSucursal:string) {
     this.sucursalList.splice(id, 1);
+    this.dataService.deleteDataSucursales(nombreSucursal);
   }
 
   changeValue(id: number, property: string, event: any) {

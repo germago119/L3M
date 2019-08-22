@@ -172,63 +172,63 @@
           <th class="text-center">Fecha de Nacimiento</th>
           <th class="text-center">Fecha de Ingreso Laboral</th>
           <th class="text-center">Sucursal</th>
-          <th class="text-center">Salario por Hora</th>
+          <th class="text-center">Salario por Hora (Colones)</th>
           <th class="text-center">Eliminar</th>
         </tr>
         </thead>
         <tr *ngFor="let trabajador of trabajadoresList; let id = index">
           <td>
             <span
-              (blur)="updateList(id, 'cedula', $event)"
-              (keyup)="changeValue(id, 'cedula', $event)"
+              (blur)="updateList(id, 'cedulaTrabajador', $event)"
+              (keyup)="changeValue(id, 'cedulaTrabajador', $event)"
               contenteditable="true"
-            >{{ trabajador.cedula }}</span
+            >{{ trabajador.cedulaTrabajador }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'nombreCompleto', $event)"
-              (keyup)="changeValue(id, 'nombreCompleto', $event)"
+              (blur)="updateList(id, 'nombreCompletoTrabajador', $event)"
+              (keyup)="changeValue(id, 'nombreCompletoTrabajador', $event)"
               contenteditable="true"
-            >{{ trabajador.nombreCompleto }}</span
+            >{{ trabajador.nombreCompletoTrabajador }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'fechaNacimiento', $event)"
-              (keyup)="changeValue(id, 'fechaNacimiento', $event)"
+              (blur)="updateList(id, 'fechaNacimientoTrabajador', $event)"
+              (keyup)="changeValue(id, 'fechaNacimientoTrabajador', $event)"
               contenteditable="true"
-            >{{ trabajador.fechaNacimiento }}</span
+            >{{ trabajador.fechaNacimientoTrabajador }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'fechaIngreso', $event)"
-              (keyup)="changeValue(id, 'fechaIngreso', $event)"
+              (blur)="updateList(id, 'fechaIngresoTrabajador', $event)"
+              (keyup)="changeValue(id, 'fechaIngresoTrabajador', $event)"
               contenteditable="true"
-            >{{ trabajador.fechaIngreso }}</span
+            >{{ trabajador.fechaIngresoTrabajador }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'sucursal', $event)"
-              (keyup)="changeValue(id, 'sucursal', $event)"
+              (blur)="updateList(id, 'sucursalTrabajador', $event)"
+              (keyup)="changeValue(id, 'sucursalTrabajador', $event)"
               contenteditable="true"
-            >{{ trabajador.sucursal }}</span
+            >{{ trabajador.sucursalTrabajador }}</span
             >
           </td>
           <td>
             <span
-              (blur)="updateList(id, 'salarioPorHora', $event)"
-              (keyup)="changeValue(id, 'salarioPorHora', $event)"
+              (blur)="updateList(id, 'salarioHoraTrabajador', $event)"
+              (keyup)="changeValue(id, 'salarioHoraTrabajador', $event)"
               contenteditable="true"
-            >{{ trabajador.salarioPorHora }}</span
+            >{{ trabajador.salarioHoraTrabajador }}</span
             >
           </td>
           <td>
             <span class="table-remove">
               <button
-                (click)="remove(id)"
+                (click)="remove(id,trabajador.cedulaTrabajador)"
                 class="my-0"
                 color="danger"
                 mdbBtn

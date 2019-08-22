@@ -1,11 +1,11 @@
 export class Trabajador {
   constructor(
-    public nombre: string,
-    public nacimiento: Date,
-    public sucursal: string,
-    public cedula: number,
-    public salario: number,
-    public ingreso: Date
+    public cedulaTrabajador: number,
+    public nombreCompletoTrabajador: string,
+    public fechaNacimientoTrabajador: Date,
+    public fechaIngresoTrabajador: Date,
+    public sucursalTrabajador: string,
+    public salarioHoraTrabajador: number,
   ) {
   }
 }
