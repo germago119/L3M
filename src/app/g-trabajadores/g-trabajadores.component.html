@@ -28,7 +28,7 @@
   <div class="collapse" id="collapseForm">
     <form
         #userForm="ngForm"
-        (ngSubmit)="onSubmit()"
+        (ngSubmit)="onSubmit(trabajadorModel.cedulaTrabajador, trabajadorModel.nombreCompletoTrabajador, trabajadorModel.fechaNacimientoTrabajador, trabajadorModel.fechaIngresoTrabajador, trabajadorModel.sucursalTrabajador, trabajadorModel.salarioHoraTrabajador)"
         *ngIf="!submitted"
         novalidate
     >
@@ -37,7 +37,7 @@
           <label>Nombre</label>
           <input
               #name="ngModel"
-              [(ngModel)]="trabajadorModel.nombre"
+              [(ngModel)]="trabajadorModel.nombreCompletoTrabajador"
               [class.is-invalid]="name.invalid && name.touched"
               class="form-control"
               name="name"
@@ -55,7 +55,7 @@
           <label>Nacimiento</label>
           <input
               #nacimiento="ngModel"
-              [(ngModel)]="trabajadorModel.nacimiento"
+              [(ngModel)]="trabajadorModel.fechaNacimientoTrabajador"
               [bsConfig]="{ isAnimated: true, adaptivePosition: true }"
               [class.is-invalid]="nacimiento.invalid && nacimiento.touched"
               bsDatepicker
@@ -76,7 +76,7 @@
           <label>Ingreso</label>
           <input
               #ingreso="ngModel"
-              [(ngModel)]="trabajadorModel.ingreso"
+              [(ngModel)]="trabajadorModel.fechaIngresoTrabajador"
               [bsConfig]="{ isAnimated: true, adaptivePosition: true }"
               [class.is-invalid]="ingreso.invalid && ingreso.touched"
               bsDatepicker
@@ -95,11 +95,11 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-3 form-group">
+        <div class="col-lg-4 form-group">
           <label>Cedula</label>
           <input
               #cedula="ngModel"
-              [(ngModel)]="trabajadorModel.cedula"
+              [(ngModel)]="trabajadorModel.cedulaTrabajador"
               [class.is-invalid]="cedula.invalid && cedula.touched"
               class="form-control"
               name="cedula"
@@ -113,11 +113,11 @@
           >
         </div>
 
-        <div class="col-lg-3 form-group">
+        <div class="col-lg-4 form-group">
           <label>Salario por Hora</label>
           <input
               #salario="ngModel"
-              [(ngModel)]="trabajadorModel.salario"
+              [(ngModel)]="trabajadorModel.salarioHoraTrabajador"
               [class.is-invalid]="salario.invalid && salario.touched"
               class="form-control"
               name="salario"
@@ -131,11 +131,11 @@
           >
         </div>
 
-        <div class="col-lg-3 form-group">
+        <div class="col-lg-4 form-group">
           <label>Sucursal</label>
           <input
               #sucursal="ngModel"
-              [(ngModel)]="trabajadorModel.sucursal"
+              [(ngModel)]="trabajadorModel.sucursalTrabajador"
               [class.is-invalid]="sucursal.invalid && sucursal.touched"
               class="form-control"
               name="sucursal"

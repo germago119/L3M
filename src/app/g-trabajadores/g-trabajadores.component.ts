@@ -12,7 +12,7 @@ export class GTrabajadoresComponent implements OnInit {
   trabajadorModel = new Trabajador(null, '', null, null, '', null);
   submitted = false;
 
-  constructor(private dataService:DataService) {
+  constructor(private dataService: DataService) {
     this.dataService.getDataTrabajadores().subscribe(data => {
       this.trabajadoresList = data;
     });
@@ -21,14 +21,8 @@ export class GTrabajadoresComponent implements OnInit {
   editField: string;
   trabajadoresList: Array<Trabajador> = [];
 
-  onSubmit() {
-    this.submitted = true;
-    // this.enrollmentService.enroll(this.rolModel)
-    //   .subscribe(
-    //     response => console.log('Success!', response),
-    //     error => this.errorMsg = error.statusText
-    //   );
-    console.log('success');
+  onSubmit(cT: number, ncT: string, nT: Date, iT: Date, sT: string, shT: number) {
+    this.dataService.postTrabajadores(cT, ncT, nT, iT, sT, shT);
   }
 
   updateList(id: number, property: string, event: any) {
@@ -36,7 +30,7 @@ export class GTrabajadoresComponent implements OnInit {
     this.trabajadoresList[id][property] = editField;
   }
 
-  remove(id: any, cedulaTrabajador:number) {
+  remove(id: any, cedulaTrabajador: number) {
     this.trabajadoresList.splice(id, 1);
     this.dataService.deleteDataTrabajadores(cedulaTrabajador);
   }

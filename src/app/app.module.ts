@@ -22,6 +22,7 @@ import {VHomeComponent} from './v-home/v-home.component';
 import {DataService} from './data.service';
 import {FormsModule} from '@angular/forms';
 import {NgxBarcodeModule} from 'ngx-barcode';
+import {ResponsiveModule} from 'ngx-responsive';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {NgxBarcodeModule} from 'ngx-barcode';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxBarcodeModule
+    NgxBarcodeModule,
+    ResponsiveModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

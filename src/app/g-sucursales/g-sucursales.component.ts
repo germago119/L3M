@@ -15,8 +15,8 @@ export class GSucursalesComponent implements OnInit {
   editField: string;
   sucursalList: Array<Sucursal> = [];
 
-  constructor(private dataService:DataService) {
-    this.dataService.getDataSucursales().subscribe(data =>{
+  constructor(private dataService: DataService) {
+    this.dataService.getDataSucursales().subscribe(data => {
       this.sucursalList = data;
     });
   }
@@ -30,7 +30,7 @@ export class GSucursalesComponent implements OnInit {
     this.sucursalList[id][property] = editField;
   }
 
-  remove(id: any, nombreSucursal:string) {
+  remove(id: any, nombreSucursal: string) {
     this.sucursalList.splice(id, 1);
     this.dataService.deleteDataSucursales(nombreSucursal);
   }

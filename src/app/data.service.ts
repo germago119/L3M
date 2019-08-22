@@ -17,133 +17,125 @@ export class DataService {
   }
 
   getDataRoles() {
-    return this.httpClient.get<Rol[]>("/api/Roles");
+    return this.httpClient.get<Rol[]>('/api/Roles');
   }
 
-  getDataSucursales(){
-    return this.httpClient.get<Sucursal[]>("/api/Sucursales");
+  getDataSucursales() {
+    return this.httpClient.get<Sucursal[]>('/api/Sucursales');
   }
 
-  getDataTrabajadores(){
-    return this.httpClient.get<Trabajador[]>("/api/Trabajadores");
+  getDataTrabajadores() {
+    return this.httpClient.get<Trabajador[]>('/api/Trabajadores');
   }
 
-  getDataProveedores(){
-    return this.httpClient.get<Proveedor[]>("/api/Proveedores");
+  getDataProveedores() {
+    return this.httpClient.get<Proveedor[]>('/api/Proveedores');
   }
 
-  getDataProductos(){
-    return this.httpClient.get<Producto[]>("/api/Productos");
+  getDataProductos() {
+    return this.httpClient.get<Producto[]>('/api/Productos');
   }
 
-  getDataCompras(){
-    return this.httpClient.get<Compra[]>("/api/Compras");
+  getDataCompras() {
+    return this.httpClient.get<Compra[]>('/api/Compras');
   }
 
-  deleteDataRoles(idRol: string){
+  deleteDataRoles(idRol: string) {
     console.log(idRol);
-    this.httpClient.delete("/api/Roles/" + idRol)
+    this.httpClient.delete('/api/Roles/' + idRol)
     .subscribe(
         (val) => {
-            console.log("DELETE call successful value returned in body",
+            console.log('DELETE call successful value returned in body',
                         val);
         },
         response => {
-            console.log("DELETE call in error", response);
+            console.log('DELETE call in error', response);
         },
         () => {
-            console.log("The DELETE observable is now completed.");
+            console.log('The DELETE observable is now completed.');
         });
   }
 
-  deleteDataSucursales(idSucursal: string){
+  deleteDataSucursales(idSucursal: string) {
     console.log(idSucursal);
-    this.httpClient.delete("/api/Sucursales/" + idSucursal)
+    this.httpClient.delete('/api/Sucursales/' + idSucursal)
     .subscribe(
         (val) => {
-            console.log("DELETE call successful value returned in body",
+            console.log('DELETE call successful value returned in body',
                         val);
         },
         response => {
-            console.log("DELETE call in error", response);
+            console.log('DELETE call in error', response);
         },
         () => {
-            console.log("The DELETE observable is now completed.");
+            console.log('The DELETE observable is now completed.');
         });
   }
 
-  deleteDataTrabajadores(idTrabajador: number){
+  deleteDataTrabajadores(idTrabajador: number) {
     console.log(idTrabajador);
-    this.httpClient.delete("/api/Trabajadores/" + idTrabajador.toString())
+    this.httpClient.delete('/api/Trabajadores/' + idTrabajador.toString())
     .subscribe(
         (val) => {
-            console.log("DELETE call successful value returned in body",
+            console.log('DELETE call successful value returned in body',
                         val);
         },
         response => {
-            console.log("DELETE call in error", response);
+            console.log('DELETE call in error', response);
         },
         () => {
-            console.log("The DELETE observable is now completed.");
+            console.log('The DELETE observable is now completed.');
         });
   }
 
-  deleteDataProveedores(idProveedor: string){
+  deleteDataProveedores(idProveedor: string) {
     console.log(idProveedor);
-    this.httpClient.delete("/api/Proveedores/" + idProveedor)
+    this.httpClient.delete('/api/Proveedores/' + idProveedor)
     .subscribe(
         (val) => {
-            console.log("DELETE call successful value returned in body",
+            console.log('DELETE call successful value returned in body',
                         val);
         },
         response => {
-            console.log("DELETE call in error", response);
+            console.log('DELETE call in error', response);
         },
         () => {
-            console.log("The DELETE observable is now completed.");
+            console.log('The DELETE observable is now completed.');
         });
   }
 
-  deleteDataProductos(idProducto: number){
+  deleteDataProductos(idProducto: number) {
     console.log(idProducto);
-    this.httpClient.delete("/api/Productos/" + idProducto.toString())
+    this.httpClient.delete('/api/Productos/' + idProducto.toString())
     .subscribe(
         (val) => {
-            console.log("DELETE call successful value returned in body",
+            console.log('DELETE call successful value returned in body',
                         val);
         },
         response => {
-            console.log("DELETE call in error", response);
+            console.log('DELETE call in error', response);
         },
         () => {
-            console.log("The DELETE observable is now completed.");
+            console.log('The DELETE observable is now completed.');
         });
   }
 
-  deleteDataCompras(idCompra: string){
+  deleteDataCompras(idCompra: string) {
     console.log(idCompra);
-    this.httpClient.delete("/api/Compras/" + idCompra)
+    this.httpClient.delete('/api/Compras/' + idCompra)
     .subscribe(
         (val) => {
-            console.log("DELETE call successful value returned in body",
+            console.log('DELETE call successful value returned in body',
                         val);
         },
         response => {
-            console.log("DELETE call in error", response);
+            console.log('DELETE call in error', response);
         },
         () => {
-            console.log("The DELETE observable is now completed.");
+            console.log('The DELETE observable is now completed.');
         });
-    data  => {
-      console.log('POST Request is successful ', data);
-    },
-    error  => {
 
-      console.log('Error', error);
 
-    }
-
-    );
   }
 
   postRol(nombreRolForm: string, descripcionRolForm: string) {
@@ -163,9 +155,68 @@ export class DataService {
         });
   }
 
-// postCompras() {}
+  postProducto(barra: number, nombre: string, descrip: string, prove: string, precio: number, imp: string, desc: string, suc: string) {
+    this.httpClient.post('api/Productos',
+      {
+        codigoBarraProducto: barra,
+        nombreProducto: nombre,
+        descripcionProducto: descrip,
+        proveedorProducto: prove,
+        precioProducto: precio,
+        impuestoProducto: imp,
+        descuentoProducto: desc,
+        sucursalProducto: suc
+      })
+      .subscribe(
+        data => {
+          console.log('POST Request is successful ', data);
+        },
+        error => {
+
+          console.log('Error', error);
+
+        });
+  }
+  postCompras(descrip: string, fechaReal: Date, fechaReg: Date, prov: string, foto: string, suc: string) {
+    this.httpClient.post('api/Compras',
+      {
+        descripcionCompra: descrip,
+        fechaRealCompra: fechaReal.toLocaleDateString('en-GB'),
+        fechaRegistroCompra: fechaReg.toLocaleDateString('en-GB'),
+        proveedorCompra: prov,
+        fotoCompra: foto,
+        sucursalRegistraCompra: suc
+      })
+      .subscribe(
+        data => {
+          console.log('POST Request is successful ', data);
+        },
+        error => {
+
+          console.log('Error', error);
+
+        });
+  }
 //
 // postPlanilla() {}
+
+  postProveedores(cedula: string, nombre: string) {
+    this.httpClient.post('api/Proveedores',
+      {
+        cedulaProveedor: cedula,
+        nombreProveedor: nombre
+      })
+      .subscribe(
+        data => {
+          console.log('POST Request is successful ', data);
+        },
+        error => {
+
+          console.log('Error', error);
+
+        });
+
+  }
 
   postSucursales(nombre: string, direccion: string, telefono: number, admin: string) {
     this.httpClient.post('api/Sucursales',
@@ -174,6 +225,27 @@ export class DataService {
         direccionSucursal: direccion,
         telefonoSucursal: telefono,
         administradorSucursal: admin
+      })
+      .subscribe(
+        data => {
+          console.log('POST Request is successful ', data);
+        },
+        error => {
+
+          console.log('Error', error);
+
+        });
+  }
+
+  postTrabajadores(cedula: number, nombre: string, nacimiento: Date, ingreso: Date, sucursal: string, salario: number) {
+    this.httpClient.post('api/Trabajadores',
+      {
+        cedulaTrabajador: cedula,
+        nombreCompletoTrabajador: nombre,
+        fechaNacimientoTrabajador: nacimiento.toLocaleDateString('en-GB'),
+        fechaIngresoTrabajador: ingreso.toLocaleDateString('en-GB'),
+        sucursalTrabajador: sucursal,
+        salarioHoraTrabajador: salario
       })
       .subscribe(
         data => {

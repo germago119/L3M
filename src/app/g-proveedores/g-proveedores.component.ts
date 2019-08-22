@@ -15,20 +15,14 @@ export class GProveedoresComponent implements OnInit {
   editField: string;
   proveedoresList: Array<Proveedor> = [];
 
-  constructor(private dataService:DataService) {
-    this.dataService.getDataProveedores().subscribe(data=>{
+  constructor(private dataService: DataService) {
+    this.dataService.getDataProveedores().subscribe(data => {
       this.proveedoresList = data;
     });
   }
 
-  onSubmit() {
-    this.submitted = true;
-    // this.enrollmentService.enroll(this.rolModel)
-    //   .subscribe(
-    //     response => console.log('Success!', response),
-    //     error => this.errorMsg = error.statusText
-    //   );
-    console.log('success');
+  onSubmit(cP: string, nP: string) {
+    this.dataService.postProveedores(cP, nP);
   }
 
 
@@ -37,7 +31,7 @@ export class GProveedoresComponent implements OnInit {
     this.proveedoresList[id][property] = editField;
   }
 
-  remove(id: any, cedulaProveedor:string) {
+  remove(id: any, cedulaProveedor: string) {
     this.proveedoresList.splice(id, 1);
     this.dataService.deleteDataProveedores(cedulaProveedor);
   }

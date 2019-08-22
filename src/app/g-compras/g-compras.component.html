@@ -1,3 +1,165 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1 class="display-4">Gestion de Compra</h1>
+    <p class="lead">
+      El sistema debe permitir ingresar, modificar y eliminar trabajadores, de
+      los cuales se guarda cedula, nombre completo, fecha de nacimiento, fecha
+      de ingreso al supermercado, sucursal donde labora y el salario por hora
+      del empleado.
+    </p>
+    <hr class="my-4"/>
+    <p>
+      It uses utility classes for typography and spacing to space content
+      within the larger container.
+    </p>
+    <button
+      aria-controls="collapseForm"
+      aria-expanded="false"
+      class="btn btn-outline-success btn-lg"
+      data-target="#collapseForm"
+      data-toggle="collapse"
+      role="button"
+      type="button"
+    >
+      AGREGAR
+    </button>
+  </div>
+
+  <div class="collapse" id="collapseForm">
+    <form
+        #userForm="ngForm"
+        (ngSubmit)="onSubmit(compraModel.descripcionCompra, compraModel.fechaRealCompra, compraModel.fechaRegistroCompra, compraModel.proveedorCompra, compraModel.fotoCompra, compraModel.sucursalRegistraCompra)"
+        *ngIf="!submitted"
+        novalidate
+    >
+      <div class="row">
+        <div class="col-lg-6 form-group">
+          <label>Descripcion</label>
+          <input
+              #descrip="ngModel"
+              [(ngModel)]="compraModel.descripcionCompra"
+              [class.is-invalid]="descrip.invalid && descrip.touched"
+              class="form-control"
+              name="name"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="descrip.valid || descrip.untouched"
+            class="text-danger"
+          >Descripcion es necesario</small
+          >
+        </div>
+
+        <div class="col-lg-3 form-group">
+          <label>Fecha Real</label>
+          <input
+              #fechaReal="ngModel"
+              [(ngModel)]="compraModel.fechaRealCompra"
+              [bsConfig]="{ isAnimated: true, adaptivePosition: true }"
+              [class.is-invalid]="fechaReal.invalid && fechaReal.touched"
+              bsDatepicker
+              class="form-control"
+              name="fechaReal"
+              placement="top"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="fechaReal.valid || fechaReal.untouched"
+            class="text-danger"
+          >Fecha Real requerida</small
+          >
+        </div>
+
+        <div class="col-lg-3 form-group">
+          <label>Fecha Registro</label>
+          <input
+              #fechaReg="ngModel"
+              [(ngModel)]="compraModel.fechaRegistroCompra"
+              [bsConfig]="{ isAnimated: true, adaptivePosition: true }"
+              [class.is-invalid]="fechaReg.invalid && fechaReg.touched"
+              bsDatepicker
+              class="form-control"
+              name="fechaReg"
+              placement="top"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="fechaReg.valid || fechaReg.untouched"
+            class="text-danger"
+          >Fecha Registro requerido</small
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 form-group">
+          <label>Proveedor</label>
+          <input
+              #prov="ngModel"
+              [(ngModel)]="compraModel.proveedorCompra"
+              [class.is-invalid]="prov.invalid && prov.touched"
+              class="form-control"
+              name="prov"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="prov.valid || prov.untouched"
+            class="text-danger"
+          >Proveedor requerido</small
+          >
+        </div>
+
+        <div class="col-lg-4 form-group">
+          <label>Foto</label>
+          <input
+              #foto="ngModel"
+              [(ngModel)]="compraModel.fotoCompra"
+              [class.is-invalid]="foto.invalid && foto.touched"
+              class="form-control"
+              name="foto"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="foto.valid || foto.untouched"
+            class="text-danger"
+          >Foto requerida</small
+          >
+        </div>
+
+        <div class="col-lg-4 form-group">
+          <label>Sucursal</label>
+          <input
+              #suc="ngModel"
+              [(ngModel)]="compraModel.sucursalRegistraCompra"
+              [class.is-invalid]="suc.invalid && suc.touched"
+              class="form-control"
+              name="suc"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="suc.valid || suc.untouched"
+            class="text-danger"
+          > Sucursal requerido</small
+          >
+        </div>
+      </div>
+
+      <button
+        [disabled]="userForm.form.invalid"
+        class="btn btn-outline-primary "
+        type="submit"
+      >
+        Agregar Compra
+      </button>
+    </form>
+  </div>
+
 <div class="card-body">
   <div class="table-editable" id="table">
     <table class="table table-bordered table-responsive-md table-striped text-center">
@@ -48,4 +210,6 @@
       </tr>
     </table>
   </div>
+</div>
+
 </div>

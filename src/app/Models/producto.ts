@@ -8,6 +8,5 @@ export class Producto {
     public impuestoProducto: string,
     public descuentoProducto: string,
     public sucursalProducto: string
-  ) {
-  }
+  ) {}
 }

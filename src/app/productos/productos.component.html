@@ -1,3 +1,193 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1 class="display-4">Gestion de Productos</h1>
+    <p class="lead">
+      El sistema debe permitir ingresar, modificar y eliminar trabajadores, de
+      los cuales se guarda cedula, nombre completo, fecha de nacimiento, fecha
+      de ingreso al supermercado, sucursal donde labora y el salario por hora
+      del empleado.
+    </p>
+    <hr class="my-4"/>
+    <p>
+      It uses utility classes for typography and spacing to space content out
+      within the larger container.
+    </p>
+    <button
+      aria-controls="collapseForm"
+      aria-expanded="false"
+      class="btn btn-outline-success btn-lg"
+      data-target="#collapseForm"
+      data-toggle="collapse"
+      role="button"
+      type="button"
+    >
+      AGREGAR
+    </button>
+  </div>
+
+  <div class="collapse" id="collapseForm">
+    <form
+        #userForm="ngForm"
+        (ngSubmit)="onSubmit(productoModel.codigoBarraProducto, productoModel.nombreProducto, productoModel.descripcionProducto, productoModel.proveedorProducto, productoModel.precioProducto, productoModel.impuestoProducto, productoModel.descuentoProducto, productoModel.sucursalProducto)"
+        *ngIf="!submitted"
+        novalidate
+    >
+      <div class="row">
+        <div class="col-lg-6 form-group">
+          <label>Nombre</label>
+          <input
+              #name="ngModel"
+              [(ngModel)]="productoModel.nombreProducto"
+              [class.is-invalid]="name.invalid && name.touched"
+              class="form-control"
+              name="name"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="name.valid || name.untouched"
+            class="text-danger"
+          >Nombre es necesario</small
+          >
+        </div>
+
+       <div class="col-lg-3 form-group">
+          <label>Codigo de Barra</label>
+          <input
+              #barra="ngModel"
+              [(ngModel)]="productoModel.codigoBarraProducto"
+              [class.is-invalid]="barra.invalid && barra.touched"
+              class="form-control"
+              name="barra"
+              required
+              type="number"
+          />
+          <small
+            [class.d-none]="barra.valid || barra.untouched"
+            class="text-danger"
+          >Codigo de Barra es necesario</small
+          >
+        </div>
+
+         <div class="col-lg-3 form-group">
+          <label>Proveedor</label>
+          <input
+              #proveedor="ngModel"
+              [(ngModel)]="productoModel.proveedorProducto"
+              [class.is-invalid]="proveedor.invalid && proveedor.touched"
+              class="form-control"
+              name="proveedor"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="proveedor.valid || proveedor.untouched"
+            class="text-danger"
+          >Proveedor es necesario</small
+          >
+        </div>
+
+      </div>
+
+      <div class="row">
+         <div class="col-lg-6 form-group">
+          <label>Descripcion</label>
+          <input
+              #descrip="ngModel"
+              [(ngModel)]="productoModel.descripcionProducto"
+              [class.is-invalid]="descrip.invalid && descrip.touched"
+              class="form-control"
+              name="descrip"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="descrip.valid || descrip.untouched"
+            class="text-danger"
+          >Descripcion es necesario</small
+          >
+        </div>
+
+        <div class="col-lg-3 form-group">
+          <label>Precio</label>
+          <input
+              #precio="ngModel"
+              [(ngModel)]="productoModel.precioProducto"
+              [class.is-invalid]="precio.invalid && precio.touched"
+              class="form-control"
+              name="precio"
+              required
+              type="number"
+          />
+          <small
+            [class.d-none]="precio.valid || precio.untouched"
+            class="text-danger"
+          >Precio es necesario</small
+          >
+        </div>
+
+        <div class="col-lg-3 form-group">
+          <label>Sucursal</label>
+          <input
+              #sucursal="ngModel"
+              [(ngModel)]="productoModel.sucursalProducto"
+              [class.is-invalid]="sucursal.invalid && sucursal.touched"
+              class="form-control"
+              name="sucursal"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="sucursal.valid || sucursal.untouched"
+            class="text-danger"
+          >Sucursal requerido</small
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 form-group">
+          <label>Descuento</label>
+          <input
+              #descuento="ngModel"
+              [(ngModel)]="productoModel.descuentoProducto"
+              [class.is-invalid]="descuento.invalid"
+              class="form-control"
+              name="descuento"
+              type="text"
+          />
+        </div>
+
+        <div class="col-lg-3 form-group">
+          <label>Impuesto</label>
+          <input
+              #imp="ngModel"
+              [(ngModel)]="productoModel.impuestoProducto"
+              [class.is-invalid]="imp.invalid && imp.touched"
+              class="form-control"
+              name="imp"
+              required
+              type="text"
+          />
+          <small
+            [class.d-none]="imp.valid || imp.untouched"
+            class="text-danger"
+          >Impuesto requerido</small
+          >
+        </div>
+      </div>
+
+      <button
+        [disabled]="userForm.form.invalid"
+        class="btn btn-outline-primary "
+        type="submit"
+      >
+        Agregar Producto
+      </button>
+    </form>
+  </div>
+
+
 <div class="card-body">
     <div class="table-editable" id="table">
       <table
@@ -38,7 +228,7 @@
               (blur)="updateList(id, 'codigoBarraProducto', $event)"
               (keyup)="changeValue(id, 'codigoBarraProducto', $event)"
               contenteditable="true"
-            >{{ producto.codigoBarraProducto }}</span
+            ><ngx-barcode [bc-display-value]="true" [bc-font-size]="14" [bc-height]="35" [bc-value] = producto.codigoBarraProducto.toString()></ngx-barcode></span
             >
           </td>
           <td>
@@ -101,4 +291,6 @@
         </tr>
       </table>
     </div>
+</div>
+
 </div>
