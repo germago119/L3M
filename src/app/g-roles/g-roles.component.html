@@ -55,11 +55,11 @@
         <tr *ngFor="let rol of rolesList; let id = index">
           <td>
             <span (blur)="updateList(id, 'nombre', $event)" (keyup)="changeValue(id, 'nombre', $event)"
-                  contenteditable="true">{{rol.nombre}}</span>
+                  contenteditable="true">{{rol.nombreRol}}</span>
           </td>
           <td>
             <span (blur)="updateList(id, 'descripcion', $event)" (keyup)="changeValue(id, 'descripcion', $event)"
-                  contenteditable="true">{{rol.descripcion}}</span>
+                  contenteditable="true">{{rol.descripcionRol}}</span>
           </td>
           <td>
                 <span class="table-remove">

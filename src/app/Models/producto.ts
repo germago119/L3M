@@ -1,13 +1,13 @@
 export class Producto {
   constructor(
-    public nombre: string,
-    public descripcion: string,
-    public barcode: string,
-    public proveedor: string,
-    public precioCosto: number,
-    public descuento: boolean,
-    public impuesto: boolean,
-    public precioSucursal: number
+    public codigoBarraProducto: number,
+    public nombreProducto: string,
+    public descripcionProducto: string,
+    public proveedorProducto: string,
+    public precioProducto: number,
+    public impuestoProducto: string,
+    public descuentoProducto: string,
+    public sucursalProducto: string
   ) {
   }
 }

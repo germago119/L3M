@@ -52,11 +52,11 @@
         <tr *ngFor="let proveedor of proveedoresList; let id = index">
           <td>
           <span (blur)="updateList(id, 'nombreCompleto', $event)" (keyup)="changeValue(id, 'nombreCompleto', $event)"
-                contenteditable="true">{{proveedor.nombreCompleto}}</span>
+                contenteditable="true">{{proveedor.nombreProveedor}}</span>
           </td>
           <td>
           <span (blur)="updateList(id, 'cedula', $event)" (keyup)="changeValue(id, 'cedula', $event)"
-                contenteditable="true">{{proveedor.cedula}}</span>
+                contenteditable="true">{{proveedor.cedulaProveedor}}</span>
           </td>
           <td>
                 <span class="table-remove">

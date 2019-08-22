@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Trabajador} from '../Models/trabajador';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-g-trabajadores',
@@ -8,60 +9,17 @@ import {Trabajador} from '../Models/trabajador';
 })
 export class GTrabajadoresComponent implements OnInit {
 
-  trabajadorModel = new Trabajador('', null, '', null, null, null);
+  trabajadorModel = new Trabajador(null, '', null, null, '', null);
   submitted = false;
 
-  constructor() {
+  constructor(private dataService:DataService) {
+    this.dataService.getDataTrabajadores().subscribe(data => {
+      this.trabajadoresList = data;
+    });
   }
 
   editField: string;
-  trabajadoresList: Array<any> = [
-    {
-      id: 1,
-      cedula: 12412412,
-      nombreCompleto: 'Jose Alfaro',
-      fechaNacimiento: '12/02/1980',
-      fechaIngreso: '12/02/2019',
-      sucursal: 'Alajuela',
-      salarioPorHora: 1500
-    },
-    {
-      id: 2,
-      cedula: 12412412,
-      nombreCompleto: 'Jose Alfaro',
-      fechaNacimiento: '12/02/1980',
-      fechaIngreso: '12/02/2019',
-      sucursal: 'Alajuela',
-      salarioPorHora: 1500
-    },
-    {
-      id: 3,
-      cedula: 12412412,
-      nombreCompleto: 'Jose Alfaro',
-      fechaNacimiento: '12/02/1980',
-      fechaIngreso: '12/02/2019',
-      sucursal: 'Alajuela',
-      salarioPorHora: 1500
-    },
-    {
-      id: 4,
-      cedula: 12412412,
-      nombreCompleto: 'Jose Alfaro',
-      fechaNacimiento: '12/02/1980',
-      fechaIngreso: '12/02/2019',
-      sucursal: 'Alajuela',
-      salarioPorHora: 1500
-    },
-    {
-      id: 5,
-      cedula: 12412412,
-      nombreCompleto: 'Jose Alfaro',
-      fechaNacimiento: '12/02/1980',
-      fechaIngreso: '12/02/2019',
-      sucursal: 'Alajuela',
-      salarioPorHora: 1500
-    },
-  ];
+  trabajadoresList: Array<Trabajador> = [];
 
   onSubmit() {
     this.submitted = true;

@@ -1,4 +1,7 @@
 export class Proveedor {
-  constructor(public nombre: string, public cedula: number) {
+  constructor(
+    public cedulaProveedor: string,
+    public nombreProveedor: string
+    ) {
   }
 }

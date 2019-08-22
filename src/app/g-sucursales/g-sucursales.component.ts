@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Rol} from '../Models/rol';
 import {Sucursal} from '../Models/sucursal';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-g-sucursales',
@@ -12,18 +12,13 @@ export class GSucursalesComponent implements OnInit {
   sucursalModel = new Sucursal('', '', null, '');
   submitted = false;
   errorMsg = ' ';
-
   editField: string;
-  sucursalList: Array<any> = [
-    {id: 1, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
-    {id: 2, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
-    {id: 3, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
-    {id: 4, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
-    {id: 5, nombre: 'Aurelia Vega', direccion: 'Madrid', telefono: 11283123, administrador: 'Jorge Salas'},
+  sucursalList: Array<Sucursal> = [];
 
-  ];
-
-  constructor() {
+  constructor(private dataService:DataService) {
+    this.dataService.getDataSucursales().subscribe(data =>{
+      this.sucursalList = data;
+    });
   }
 
   onSubmit() {

@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import { Producto } from '../Models/producto';
+import {DataService} from '../data.service'
 
 @Component({
   selector: 'app-productos',
@@ -8,61 +10,12 @@ import {Component, OnInit} from '@angular/core';
 export class ProductosComponent implements OnInit {
 
   editField: string;
-  productosList: Array<any> = [
-    {
-      id: 1,
-      nombre: 'Trits',
-      descripcion: 'helado',
-      codigoBarras: 124125,
-      proveedor: 'Dos pinos S.A',
-      precio: 124124,
-      impuesto: 124125,
-      descuento: 0
-    },
-    {
-      id: 2,
-      nombre: 'Trits',
-      descripcion: 'helado',
-      codigoBarras: 124125,
-      proveedor: 'Dos pinos S.A',
-      precio: 124124,
-      impuesto: 124125,
-      descuento: 0
-    },
-    {
-      id: 3,
-      nombre: 'Trits',
-      descripcion: 'helado',
-      codigoBarras: 124125,
-      proveedor: 'Dos pinos S.A',
-      precio: 124124,
-      impuesto: 124125,
-      descuento: 0
-    },
-    {
-      id: 4,
-      nombre: 'Trits',
-      descripcion: 'helado',
-      codigoBarras: 124125,
-      proveedor: 'Dos pinos S.A',
-      precio: 124124,
-      impuesto: 124125,
-      descuento: 0
-    },
-    {
-      id: 5,
-      nombre: 'Trits',
-      descripcion: 'helado',
-      codigoBarras: 124125,
-      proveedor: 'Dos pinos S.A',
-      precio: 124124,
-      impuesto: 124125,
-      descuento: 0
-    },
+  productosList: Array<Producto> = [];
 
-  ];
-
-  constructor() {
+  constructor(private dataService: DataService) {
+    this.dataService.getDataProductos().subscribe(data => {
+      this.productosList = data;
+    });
   }
 
   updateList(id: number, property: string, event: any) {

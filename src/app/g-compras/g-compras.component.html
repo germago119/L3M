@@ -15,7 +15,7 @@
       <tr *ngFor="let compra of comprasList; let id = index">
         <td>
           <span (blur)="updateList(id, 'descripcion', $event)" (keyup)="changeValue(id, 'descripcion', $event)"
-                contenteditable="true">{{compra.descripcion}}</span>
+                contenteditable="true">{{compra.descripcionCompra}}</span>
         </td>
         <td>
           <span (blur)="updateList(id, 'fechaRealCompra', $event)" (keyup)="changeValue(id, 'fechaRealCompra', $event)"
@@ -28,7 +28,7 @@
         </td>
         <td>
           <span (blur)="updateList(id, 'proveedor', $event)" (keyup)="changeValue(id, 'proveedor', $event)"
-                contenteditable="true">{{compra.proveedor}}</span>
+                contenteditable="true">{{compra.proveedorCompra}}</span>
         </td>
         <td>
           <span (blur)="updateList(id, 'fotoCompra', $event)" (keyup)="changeValue(id, 'fotoCompra', $event)"
@@ -36,7 +36,7 @@
         </td>
         <td>
           <span (blur)="updateList(id, 'sucursal', $event)" (keyup)="changeValue(id, 'sucursal', $event)"
-                contenteditable="true">{{compra.sucursal}}</span>
+                contenteditable="true">{{compra.sucursalRegistraCompra}}</span>
         </td>
 
         <td>

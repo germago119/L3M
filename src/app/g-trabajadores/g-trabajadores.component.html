@@ -172,7 +172,7 @@
           <th class="text-center">Fecha de Nacimiento</th>
           <th class="text-center">Fecha de Ingreso Laboral</th>
           <th class="text-center">Sucursal</th>
-          <th class="text-center">Salario por Hora</th>
+          <th class="text-center">Salario por Hora (Colones)</th>
           <th class="text-center">Eliminar</th>
         </tr>
         </thead>
@@ -182,7 +182,7 @@
               (blur)="updateList(id, 'cedula', $event)"
               (keyup)="changeValue(id, 'cedula', $event)"
               contenteditable="true"
-            >{{ trabajador.cedula }}</span
+            >{{ trabajador.cedulaTrabajador }}</span
             >
           </td>
           <td>
@@ -190,7 +190,7 @@
               (blur)="updateList(id, 'nombreCompleto', $event)"
               (keyup)="changeValue(id, 'nombreCompleto', $event)"
               contenteditable="true"
-            >{{ trabajador.nombreCompleto }}</span
+            >{{ trabajador.nombreCompletoTrabajador }}</span
             >
           </td>
           <td>
@@ -198,7 +198,7 @@
               (blur)="updateList(id, 'fechaNacimiento', $event)"
               (keyup)="changeValue(id, 'fechaNacimiento', $event)"
               contenteditable="true"
-            >{{ trabajador.fechaNacimiento }}</span
+            >{{ trabajador.fechaNacimientoTrabajador }}</span
             >
           </td>
           <td>
@@ -206,7 +206,7 @@
               (blur)="updateList(id, 'fechaIngreso', $event)"
               (keyup)="changeValue(id, 'fechaIngreso', $event)"
               contenteditable="true"
-            >{{ trabajador.fechaIngreso }}</span
+            >{{ trabajador.fechaIngresoTrabajador }}</span
             >
           </td>
           <td>
@@ -214,7 +214,7 @@
               (blur)="updateList(id, 'sucursal', $event)"
               (keyup)="changeValue(id, 'sucursal', $event)"
               contenteditable="true"
-            >{{ trabajador.sucursal }}</span
+            >{{ trabajador.sucursalTrabajador }}</span
             >
           </td>
           <td>
@@ -222,7 +222,7 @@
               (blur)="updateList(id, 'salarioPorHora', $event)"
               (keyup)="changeValue(id, 'salarioPorHora', $event)"
               contenteditable="true"
-            >{{ trabajador.salarioPorHora }}</span
+            >{{ trabajador.salarioHoraTrabajador }}</span
             >
           </td>
           <td>
