@@ -21,8 +21,8 @@ export class GTrabajadoresComponent implements OnInit {
   editField: string;
   trabajadoresList: Array<Trabajador> = [];
 
-  onSubmit(cT: number, ncT: string, nT: Date, iT: Date, sT: string, shT: number) {
-    this.dataService.postTrabajadores(cT, ncT, nT, iT, sT, shT);
+  onSubmit(cT: number, ncT: string, nT: Date, iT: Date, sT: string, shT: number, hlT: number, heT: number) {
+    this.dataService.postTrabajadores(cT, ncT, nT, iT, sT, shT, hlT, heT);
   }
 
   updateList(id: number, property: string, event: any) {
@@ -39,10 +39,10 @@ export class GTrabajadoresComponent implements OnInit {
     this.editField = event.target.textContent;
   }
 
-  update(cedulaTrabajador:number, nombreCompletoTrabajador:string, fechaNacimientoTrabajador:string,
-    fechaIngresoTrabajador:string, sucursalTrabajador:string, salarioHoraTrabajador:number){
-      this.dataService.putDataTrabajadores(cedulaTrabajador,nombreCompletoTrabajador,fechaNacimientoTrabajador,
-        fechaIngresoTrabajador,sucursalTrabajador,salarioHoraTrabajador);
+  update(cedulaTrabajador: number, nombreCompletoTrabajador: string, fechaNacimientoTrabajador: string,
+         fechaIngresoTrabajador: string, sucursalTrabajador: string, salarioHoraTrabajador: number) {
+    this.dataService.putDataTrabajadores(cedulaTrabajador, nombreCompletoTrabajador, fechaNacimientoTrabajador,
+      fechaIngresoTrabajador, sucursalTrabajador, salarioHoraTrabajador);
 
   }
 

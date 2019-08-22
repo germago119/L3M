@@ -12,20 +12,21 @@
 
   <div class="collapse" id="collapseForm">
     <form #userForm="ngForm"
-          (ngSubmit)="onSubmit(sucursalModel.nombre,sucursalModel.direccion, sucursalModel.telefono,sucursalModel.admin)"
+          (ngSubmit)="onSubmit(sucursalModel.nombreSucursal,sucursalModel.direccionSucursal, sucursalModel.telefonoSucursal,sucursalModel.administradorSucursal)"
           *ngIf="!submitted" novalidate>
 
       <div class="row">
         <div class="col-lg-6 form-group">
           <label>Nombre</label>
-          <input #name="ngModel" [(ngModel)]="sucursalModel.nombre" [class.is-invalid]="name.invalid && name.touched"
+          <input #name="ngModel" [(ngModel)]="sucursalModel.nombreSucursal"
+                 [class.is-invalid]="name.invalid && name.touched"
                  class="form-control" name="name" required type="text">
           <small [class.d-none]="name.valid || name.untouched" class="text-danger">Nombre es necesario</small>
         </div>
 
         <div class="col-lg-6 form-group">
           <label>Dirección</label>
-          <input #direc="ngModel" [(ngModel)]="sucursalModel.direccion"
+          <input #direc="ngModel" [(ngModel)]="sucursalModel.direccionSucursal"
                  [class.is-invalid]="direc.invalid && direc.touched" class="form-control" name="direccion"
                  required type="text">
           <small [class.d-none]="direc.valid || direc.untouched" class="text-danger">Dirección requerida</small>
@@ -35,7 +36,7 @@
       <div class="row">
         <div class="col-lg-6 form-group">
           <label>Telefono</label>
-          <input #telefono="ngModel" [(ngModel)]="sucursalModel.telefono"
+          <input #telefono="ngModel" [(ngModel)]="sucursalModel.telefonoSucursal"
                  [class.is-invalid]="telefono.invalid && telefono.touched"
                  class="form-control" name="telefono" required type="number">
           <small [class.d-none]="telefono.valid || telefono.untouched" class="text-danger">Telefono es necesario</small>
@@ -43,7 +44,7 @@
 
         <div class="col-lg-6 form-group">
           <label>Administrador</label>
-          <input #admin="ngModel" [(ngModel)]="sucursalModel.admin"
+          <input #admin="ngModel" [(ngModel)]="sucursalModel.administradorSucursal"
                  [class.is-invalid]="admin.invalid && admin.touched" class="form-control" name="direccion"
                  required type="text">
           <small [class.d-none]="admin.valid || admin.untouched" class="text-danger">Administrador requerido</small>
@@ -96,9 +97,10 @@
         </td>
         <td>
           <span>
-            <button (click)="update(sucursal.nombreSucursal,sucursal.direccionSucursal,sucursal.telefonoSucursal,sucursal.administradorSucursal)" 
+            <button
+              (click)="update(sucursal.nombreSucursal,sucursal.direccionSucursal,sucursal.telefonoSucursal,sucursal.administradorSucursal)"
               class="my-0" color="danger" mdbBtn rounded="true" size="sm"
-                    type="button">Actualizar</button>
+              type="button">Actualizar</button>
           </span>
         </td>
       </tr>

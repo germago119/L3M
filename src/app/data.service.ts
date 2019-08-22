@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient,HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Rol} from './Models/rol';
 import {Sucursal} from './Models/sucursal';
 import {Trabajador} from './Models/trabajador';
@@ -245,7 +245,7 @@ export class DataService {
         });
   }
 
-  postTrabajadores(cedula: number, nombre: string, nacimiento: Date, ingreso: Date, sucursal: string, salario: number) {
+  postTrabajadores(cedula: number, nombre: string, nacimiento: Date, ingreso: Date, sucursal: string, salario: number, hl: number, he: number) {
     this.httpClient.post('api/Trabajadores',
       {
         cedulaTrabajador: cedula,
@@ -253,7 +253,9 @@ export class DataService {
         fechaNacimientoTrabajador: nacimiento.toLocaleDateString('en-GB'),
         fechaIngresoTrabajador: ingreso.toLocaleDateString('en-GB'),
         sucursalTrabajador: sucursal,
-        salarioHoraTrabajador: salario
+        salarioHoraTrabajador: salario,
+        horasLaboradasTrabajador: hl,
+        horasExtraTrabajador: he
       })
       .subscribe(
         data => {
@@ -277,7 +279,7 @@ export class DataService {
     {headers})
     .subscribe(
         val => {
-            console.log("PUT call successful value returned in body", 
+          console.log('PUT call successful value returned in body',
                         val);
         },
         response => {
@@ -303,7 +305,7 @@ export class DataService {
     {headers})
     .subscribe(
         val => {
-            console.log("PUT call successful value returned in body", 
+          console.log('PUT call successful value returned in body',
                         val);
         },
         response => {
@@ -332,7 +334,7 @@ export class DataService {
     {headers})
     .subscribe(
         val => {
-            console.log("PUT call successful value returned in body", 
+          console.log('PUT call successful value returned in body',
                         val);
         },
         response => {
@@ -371,7 +373,7 @@ export class DataService {
     {headers})
     .subscribe(
         val => {
-            console.log("PUT call successful value returned in body", 
+          console.log('PUT call successful value returned in body',
                         val);
         },
         response => {
@@ -395,7 +397,7 @@ export class DataService {
     {headers})
     .subscribe(
         val => {
-            console.log("PUT call successful value returned in body", 
+          console.log('PUT call successful value returned in body',
                         val);
         },
         response => {
@@ -429,7 +431,7 @@ export class DataService {
     {headers})
     .subscribe(
         val => {
-            console.log("PUT call successful value returned in body", 
+          console.log('PUT call successful value returned in body',
                         val);
         },
         response => {

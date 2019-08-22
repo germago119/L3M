@@ -24,7 +24,7 @@
   <div class="collapse" id="collapseForm">
     <form
         #userForm="ngForm"
-        (ngSubmit)="onSubmit(trabajadorModel.cedulaTrabajador, trabajadorModel.nombreCompletoTrabajador, trabajadorModel.fechaNacimientoTrabajador, trabajadorModel.fechaIngresoTrabajador, trabajadorModel.sucursalTrabajador, trabajadorModel.salarioHoraTrabajador)"
+        (ngSubmit)="onSubmit(trabajadorModel.cedulaTrabajador, trabajadorModel.nombreCompletoTrabajador, trabajadorModel.fechaNacimientoTrabajador, trabajadorModel.fechaIngresoTrabajador, trabajadorModel.sucursalTrabajador, trabajadorModel.salarioHoraTrabajador, trabajadorModel.horasLaboradasTrabajador, trabajadorModel.horasExtraTrabajador)"
         *ngIf="!submitted"
         novalidate
     >
@@ -143,6 +143,32 @@
             class="text-danger"
           >Sucursal requerido</small
           >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 form-group">
+          <label>Horas Laboradas</label>
+          <input
+              #hL="ngModel"
+              [(ngModel)]="trabajadorModel.horasLaboradasTrabajador"
+              [class.is-invalid]="hL.invalid"
+              class="form-control"
+              name="hL"
+              type="number"
+          />
+        </div>
+
+        <div class="col-lg-6 form-group">
+          <label>Horas Extra</label>
+          <input
+              #hExtra="ngModel"
+              [(ngModel)]="trabajadorModel.horasExtraTrabajador"
+              [class.is-invalid]="hExtra.invalid"
+              class="form-control"
+              name="hExtra"
+              type="number"
+          />
         </div>
       </div>
 
