@@ -174,6 +174,7 @@
           <th class="text-center">Sucursal</th>
           <th class="text-center">Salario por Hora (Colones)</th>
           <th class="text-center">Eliminar</th>
+          <th class="text-center">Actualizar</th>
         </tr>
         </thead>
         <tr *ngFor="let trabajador of trabajadoresList; let id = index">
@@ -237,6 +238,24 @@
                 type="button"
               >
                 Eliminar
+              </button>
+            </span>
+          </td>
+
+          <td>
+            <span>
+              <button
+                (click)="update(trabajador.cedulaTrabajador,trabajador.nombreCompletoTrabajador,
+                trabajador.fechaNacimientoTrabajador,trabajador.fechaIngresoTrabajador,
+                trabajador.sucursalTrabajador,trabajador.salarioHoraTrabajador)"
+                class="my-0"
+                color="danger"
+                mdbBtn
+                rounded="true"
+                size="sm"
+                type="button"
+              >
+                Actualizar
               </button>
             </span>
           </td>

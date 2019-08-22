@@ -30,6 +30,7 @@ export class GRolesComponent implements OnInit {
 
   updateList(id: number, property: string, event: any) {
     this.rolesList[id][property] = event.target.textContent;
+
   }
 
   remove(id: any, nombreRol: string) {
@@ -40,6 +41,10 @@ export class GRolesComponent implements OnInit {
   changeValue(id: number, property: string, event: any) {
     this.editField = event.target.textContent;
   }
+
+  update(nombreRol:string,descripcionRol:string){
+    this.dataService.putDataRoles(nombreRol,descripcionRol);
+;  }
 
   ngOnInit() {
   }

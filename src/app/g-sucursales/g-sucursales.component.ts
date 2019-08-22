@@ -39,6 +39,10 @@ export class GSucursalesComponent implements OnInit {
     this.editField = event.target.textContent;
   }
 
+  update(nombreSucursal:string,direccionSucursal:string,telefonoSucursal:number,admnistradorSucursal:string){
+    this.dataService.putDataSucursales(nombreSucursal,direccionSucursal,telefonoSucursal,admnistradorSucursal);
+  }
+
   ngOnInit() {
   }
 

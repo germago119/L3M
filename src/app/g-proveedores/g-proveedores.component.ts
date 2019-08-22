@@ -40,6 +40,10 @@ export class GProveedoresComponent implements OnInit {
     this.editField = event.target.textContent;
   }
 
+  update(cedulaProveedor:string, nombreProveedor:string){
+      this.dataService.putDataProveedores(cedulaProveedor,nombreProveedor);
+  }
+
   ngOnInit() {
   }
 

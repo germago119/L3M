@@ -39,6 +39,17 @@ export class GComprasComponent implements OnInit {
     this.editField = event.target.textContent;
   }
 
+  update(descripcionCompra: string,
+    fechaRealCompra: Date,
+    fechaRegistroCompra: Date,
+    proveedorCompra: string,
+    fotoCompra: string,
+    sucursalRegistraCompra: string){
+    this.dataService.putDataCompras(descripcionCompra,fechaRealCompra,fechaRegistroCompra,proveedorCompra,
+      fotoCompra,sucursalRegistraCompra);
+
+  }
+
   ngOnInit() {
   }
 

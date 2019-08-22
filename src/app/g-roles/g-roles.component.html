@@ -52,6 +52,7 @@
           <th class="text-center">Nombre</th>
           <th class="text-center">Descripción</th>
           <th class="text-center">Eliminar</th>
+          <th class ="text-center">Actualizar</th>
         </tr>
         </thead>
         <tr *ngFor="let rol of rolesList; let id = index">
@@ -69,6 +70,12 @@
                           type="button">Eliminar</button>
                 </span>
           </td>
+          <td>
+            <span >
+              <button (click)="update(rol.nombreRol,rol.descripcionRol)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                      type="button">Actualizar</button>
+            </span>
+      </td>
         </tr>
       </table>
     </div>

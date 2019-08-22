@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Rol} from './Models/rol';
 import {Sucursal} from './Models/sucursal';
 import {Trabajador} from './Models/trabajador';
@@ -256,6 +256,181 @@ export class DataService {
           console.log('Error', error);
 
         });
+  }
+  putDataRoles(nombreRol:string, descripcionRol:string){
+    const headers = new HttpHeaders()
+    .set("Content-Type", "application/json");
+
+    this.httpClient.put("/api/Roles",
+    {
+      "nombreRol": nombreRol,
+      "descripcionRol": descripcionRol
+    },
+    {headers})
+    .subscribe(
+        val => {
+            console.log("PUT call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("PUT call in error", response);
+        },
+        () => {
+            console.log("The PUT observable is now completed.");
+        }
+    );
+  }
+
+  putDataSucursales(nombreSucursal:string,direccionSucursal:string,telefonoSucursal:number,admnistradorSucursal:string){
+    const headers = new HttpHeaders()
+    .set("Content-Type", "application/json");
+
+    this.httpClient.put("/api/Sucursales",
+    {
+      "nombreSucursal": nombreSucursal,
+      "direccionSucursal": direccionSucursal,
+      "telefonoSucursal": telefonoSucursal,
+      "administradorSucursal": admnistradorSucursal
+    },
+    {headers})
+    .subscribe(
+        val => {
+            console.log("PUT call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("PUT call in error", response);
+        },
+        () => {
+            console.log("The PUT observable is now completed.");
+        }
+    );
+  }
+
+  putDataTrabajadores(cedulaTrabajador:number, nombreCompletoTrabajador:string, fechaNacimientoTrabajador:string,
+    fechaIngresoTrabajador:string, sucursalTrabajador:string, salarioHoraTrabajador:number){
+    const headers = new HttpHeaders()
+    .set("Content-Type", "application/json");
+
+    this.httpClient.put("/api/Trabajadores",
+    {
+      "cedulaTrabajador": cedulaTrabajador,
+      "nombreCompletoTrabajador": nombreCompletoTrabajador,
+      "fechaNacimientoTrabajador": fechaNacimientoTrabajador,
+      "fechaIngresoTrabajador": fechaIngresoTrabajador,
+      "sucursalTrabajador": sucursalTrabajador,
+      "salarioHoraTrabajador": salarioHoraTrabajador
+    },
+    {headers})
+    .subscribe(
+        val => {
+            console.log("PUT call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("PUT call in error", response);
+        },
+        () => {
+            console.log("The PUT observable is now completed.");
+        }
+    );
+  }
+
+  putDataProductos(codigoBarraProducto: number,
+    nombreProducto: string,
+    descripcionProducto: string,
+    proveedorProducto: string,
+    precioProducto: number,
+    impuestoProducto: string,
+    descuentoProducto: string,
+    sucursalProducto: string){
+
+    const headers = new HttpHeaders()
+    .set("Content-Type", "application/json");
+
+    this.httpClient.put("/api/Productos",
+    {
+
+        "codigoBarraProducto": codigoBarraProducto,
+        "nombreProducto": nombreProducto,
+        "descripcionProducto": descripcionProducto,
+        "proveedorProducto": proveedorProducto,
+        "precioProducto": precioProducto,
+        "impuestoProducto": impuestoProducto,
+        "descuentoProducto": descuentoProducto,
+        "sucursalProducto": sucursalProducto
+    },
+    {headers})
+    .subscribe(
+        val => {
+            console.log("PUT call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("PUT call in error", response);
+        },
+        () => {
+            console.log("The PUT observable is now completed.");
+        }
+    );
+  }
+
+  putDataProveedores(cedulaProveedor:string, nombreProveedor:string){
+    const headers = new HttpHeaders()
+    .set("Content-Type", "application/json");
+
+    this.httpClient.put("/api/Proveedores",
+    {
+      "cedulaProveedor": cedulaProveedor,
+      "nombreProveedor": nombreProveedor
+    },
+    {headers})
+    .subscribe(
+        val => {
+            console.log("PUT call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("PUT call in error", response);
+        },
+        () => {
+            console.log("The PUT observable is now completed.");
+        }
+    );
+  }
+
+  putDataCompras(descripcionCompra: string,
+    fechaRealCompra: Date,
+    fechaRegistroCompra: Date,
+    proveedorCompra: string,
+    fotoCompra: string,
+    sucursalRegistraCompra: string){
+
+    const headers = new HttpHeaders()
+    .set("Content-Type", "application/json");
+
+    this.httpClient.put("/api/Compras",
+    {
+      "descripcionCompra": descripcionCompra,
+      "fechaRealCompra": fechaRealCompra,
+      "fechaRegistroCompra": fechaRegistroCompra,
+      "proveedorCompra": proveedorCompra,
+      "fotoCompra": fotoCompra,
+      "sucursalRegistraCompra": sucursalRegistraCompra
+    },
+    {headers})
+    .subscribe(
+        val => {
+            console.log("PUT call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("PUT call in error", response);
+        },
+        () => {
+            console.log("The PUT observable is now completed.");
+        }
+    );
   }
 }
 

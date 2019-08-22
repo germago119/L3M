@@ -204,6 +204,7 @@
           <th class="text-center">Descuento</th>
           <th class ="text-center">Sucursal</th>
           <th class="text-center">Eliminar</th>
+          <th class="text-center">Actualizar</th>
         </tr>
         </thead>
         <tr *ngFor="let producto of productosList; let id = index">
@@ -285,6 +286,24 @@
                 type="button"
               >
                 Eliminar
+              </button>
+            </span>
+          </td>
+
+          <td>
+            <span >
+              <button
+                (click)="update(producto.codigoBarraProducto,producto.nombreProducto,
+                producto.descripcionProducto,producto.proveedorProducto,producto.precioProducto,
+                producto.impuestoProducto, producto.descuentoProducto, producto.sucursalProducto)"
+                class="my-0"
+                color="danger"
+                mdbBtn
+                rounded="true"
+                size="sm"
+                type="button"
+              >
+                Actualizar
               </button>
             </span>
           </td>

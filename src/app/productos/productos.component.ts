@@ -38,6 +38,19 @@ export class ProductosComponent implements OnInit {
     this.editField = event.target.textContent;
   }
 
+  update( codigoBarraProducto: number,
+    nombreProducto: string,
+    descripcionProducto: string,
+    proveedorProducto: string,
+    precioProducto: number,
+    impuestoProducto: string,
+    descuentoProducto: string,
+    sucursalProducto: string){
+      this.dataService.putDataProductos(codigoBarraProducto,nombreProducto,descripcionProducto,
+      proveedorProducto,precioProducto,impuestoProducto,descuentoProducto,sucursalProducto);
+
+  }
+
   ngOnInit() {
   }
 

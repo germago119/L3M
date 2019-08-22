@@ -172,6 +172,7 @@
         <th class="text-center">Foto de la Compra</th>
         <th class="text-center">Sucursal</th>
         <th class="text-center">Eliminar</th>
+        <th class="text-center">Actualizar</th>
       </tr>
       </thead>
       <tr *ngFor="let compra of comprasList; let id = index">
@@ -207,6 +208,14 @@
                           type="button">Eliminar</button>
                 </span>
         </td>
+        <td>
+          <span>
+            <button (click)="update(compra.descripcionCompra,compra.fechaRealCompra,
+            compra.fechaRegistroCompra,compra.proveedorCompra,compra.fotoCompra,
+            compra.sucursalRegistraCompra)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                    type="button">Actualizar</button>
+          </span>
+  </td>
       </tr>
     </table>
   </div>

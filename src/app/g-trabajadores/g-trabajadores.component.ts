@@ -39,6 +39,13 @@ export class GTrabajadoresComponent implements OnInit {
     this.editField = event.target.textContent;
   }
 
+  update(cedulaTrabajador:number, nombreCompletoTrabajador:string, fechaNacimientoTrabajador:string,
+    fechaIngresoTrabajador:string, sucursalTrabajador:string, salarioHoraTrabajador:number){
+      this.dataService.putDataTrabajadores(cedulaTrabajador,nombreCompletoTrabajador,fechaNacimientoTrabajador,
+        fechaIngresoTrabajador,sucursalTrabajador,salarioHoraTrabajador);
+
+  }
+
   ngOnInit() {
   }
 

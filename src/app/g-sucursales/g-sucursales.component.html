@@ -70,6 +70,7 @@
         <th class="text-center">Teléfono</th>
         <th class="text-center">Administrador</th>
         <th class="text-center">Eliminar</th>
+        <th class="text-center">Actualizar</th>
       </tr>
       </thead>
       <tr *ngFor="let sucursal of sucursalList; let id = index">
@@ -94,6 +95,13 @@
                     <button (click)="remove(id,sucursal.nombreSucursal)" class="my-0" color="danger" mdbBtn rounded="true" size="sm"
                             type="button">Eliminar</button>
                   </span>
+        </td>
+        <td>
+          <span>
+            <button (click)="update(sucursal.nombreSucursal,sucursal.direccionSucursal,sucursal.telefonoSucursal,sucursal.administradorSucursal)" 
+              class="my-0" color="danger" mdbBtn rounded="true" size="sm"
+                    type="button">Actualizar</button>
+          </span>
         </td>
       </tr>
     </table>
