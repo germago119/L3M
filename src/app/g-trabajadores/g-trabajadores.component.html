@@ -179,12 +179,7 @@
         </thead>
         <tr *ngFor="let trabajador of trabajadoresList; let id = index">
           <td>
-            <span
-              (blur)="updateList(id, 'cedulaTrabajador', $event)"
-              (keyup)="changeValue(id, 'cedulaTrabajador', $event)"
-              contenteditable="true"
-            >{{ trabajador.cedulaTrabajador }}</span
-            >
+            <span>{{ trabajador.cedulaTrabajador }}</span>
           </td>
           <td>
             <span

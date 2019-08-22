@@ -225,12 +225,7 @@
             >
           </td>
           <td>
-            <span
-              (blur)="updateList(id, 'codigoBarraProducto', $event)"
-              (keyup)="changeValue(id, 'codigoBarraProducto', $event)"
-              contenteditable="true"
-            ><ngx-barcode [bc-display-value]="true" [bc-font-size]="14" [bc-height]="35" [bc-value] = producto.codigoBarraProducto.toString()></ngx-barcode></span
-            >
+            <span><ngx-barcode [bc-display-value]="true" [bc-font-size]="14" [bc-height]="35" [bc-value] = producto.codigoBarraProducto.toString()></ngx-barcode></span>
           </td>
           <td>
             <span

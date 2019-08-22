@@ -57,8 +57,7 @@
         </thead>
         <tr *ngFor="let rol of rolesList; let id = index">
           <td>
-            <span (blur)="updateList(id, 'nombreRol', $event)" (keyup)="changeValue(id, 'nombreRol', $event)"
-                  contenteditable="true">{{rol.nombreRol}}</span>
+            <span>{{rol.nombreRol}}</span>
           </td>
           <td>
             <span (blur)="updateList(id, 'descripcionRol', $event)" (keyup)="changeValue(id, 'descripcionRol', $event)"

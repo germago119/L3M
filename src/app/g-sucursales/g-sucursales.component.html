@@ -75,8 +75,7 @@
       </thead>
       <tr *ngFor="let sucursal of sucursalList; let id = index">
         <td>
-          <span (blur)="updateList(id, 'nombreSucursal', $event)" (keyup)="changeValue(id, 'nombreSucursal', $event)"
-                contenteditable="true">{{sucursal.nombreSucursal}}</span>
+          <span >{{sucursal.nombreSucursal}}</span>
         </td>
         <td>
           <span (blur)="updateList(id, 'direccionSucursal', $event)" (keyup)="changeValue(id, 'direccionSucursal', $event)"
