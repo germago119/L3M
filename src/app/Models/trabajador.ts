@@ -6,6 +6,8 @@ export class Trabajador {
     public fechaIngresoTrabajador: Date,
     public sucursalTrabajador: string,
     public salarioHoraTrabajador: number,
+    public horasLaboradasTrabajador: number,
+    public horasExtraTrabajador: number
   ) {
   }
 }

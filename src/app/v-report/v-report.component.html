@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1 class="display-4">Hello, world!</h1>
+  <h1 class="display-4">Vista de Reportes</h1>
   <p class="lead">
     This is a simple hero unit, a simple jumbotron-style component for calling
     extra attention to featured content or information.
@@ -10,4 +10,43 @@
     within the larger container.
   </p>
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+
+<h3 class="card-header text-center font-weight-bold text-uppercase py-4">Reporte de productos por sucursal</h3>
+<div class="container">
+  <h4>Inserte una sucursal</h4>
+  <div class="form-inline">
+      <input #InputSucursal class="form-control mr-1" >
+      <button class="btn btn-primary" (click)="getProductosPorSucursal(InputSucursal.value)" >Ingresar</button>
+  </div>
+</div>
+
+<div class="card-body">
+  <div class="table-editable" id="table">
+    <table class="table table-bordered table-responsive-md table-striped text-center">
+      <thead class="table-dark">
+      <tr>
+        <th class="text-center">Nombre</th>
+        <th class="text-center">Descripción</th>
+        <th class="text-center">Precio</th>
+        
+      </tr>
+      </thead>
+      <tr *ngFor="let producto of productosList">
+        <td>
+          <span>{{producto.nombreProducto}}</span>
+        </td>
+        <td>
+          <span >{{producto.descripcionProducto}}</span>
+        </td>
+        <td>
+          <span >{{producto.precioProducto}}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div>
+  <button type="button" class="btn btn-secondary btn-lg" (click)="DownloadReport1()">Generar Reporte</button>
 </div>

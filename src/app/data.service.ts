@@ -40,6 +40,14 @@ export class DataService {
     return this.httpClient.get<Compra[]>('/api/Compras');
   }
 
+  getDataProductosPorSucursal(nombreSucursal:string){
+    return this.httpClient.get<Producto[]>('/api/Productos/Sucursal/' + nombreSucursal);
+  }
+
+  getDataPlanilla(){
+    return this.httpClient.get<Trabajador[]>('/api/Trabajadores/Planilla');
+  }
+
   deleteDataRoles(idRol: string) {
     console.log(idRol);
     this.httpClient.delete('/api/Roles/' + idRol)
